@@ -5,22 +5,34 @@
 import Shelly
 import Control.Applicative
 import Data.String
+import Data.Foldable
 import qualified Data.Text as T
 default (T.Text)
 
---paths :: Data.String.IsString a => [a] -> [a]
---paths x = map (Data.String.ToString ("~/dotfiles/") ++) x
+encrypt :: String -> Sh()
+encrypt x = run_ "gpg" ["-o", T.pack (x ++ ".gpg")
+                       , "--passphrase-file", "./.passphrase_files"
+                       , "-c", T.pack x]
+
+examine :: [String] -> Sh()
+examine files = 
+  forM_ files $ \cur -> do
+    exists <- (test_f . fromText . T.pack) cur
+    echo $ T.pack cur
+    if exists 
+    then encrypt cur
+    else echo "do not exist"
 
 main = shelly $ verbosely $ do
-  let files = [ "mail_config/.fetchmailrc.gpg"
+  let files = [ "mail_config/.fetchmailrc"
               , "mail_config/.msmtprc"
               , "mail_config/.procmailrc"
               , "abook/.abook/addressbook"
               , "irssi/.irssi/config"]
-  let paths = map (("../../dotfiles/") ++) files
+  let folder = "dotfiles/"
+  let paths = map ("dotfiles/" ++) files
 
   -- T.pack converts a string to a text
-  echo (T.pack (head paths))
-  a <- (test_f . fromText . T.pack . head) paths
-  unless a $ echo "File does not exist"
+  examine paths
+  
   echo "lol"
