@@ -18,13 +18,11 @@ examine :: [String] -> Sh()
 examine files = 
   forM_ files $ \cur -> do
     exists <- (test_f . fromText . T.pack) cur
-    echo $ T.pack cur
-    if exists 
-    then encrypt cur
-    else echo "do not exist"
+    run_ "echo" ["lol", "kikoo"]
+    if exists then encrypt cur else error $ cur++"do not exist"
 
 main = shelly $ verbosely $ do
-  let files = [ "mail_config/.fetchmailrc"
+  let files = [ "mail_config/.fetchmailrc2"
               , "mail_config/.msmtprc"
               , "mail_config/.procmailrc"
               , "abook/.abook/addressbook"
