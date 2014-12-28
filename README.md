@@ -1,6 +1,8 @@
 shelly-examples
 ===============
 
+![Build status](https://travis-ci.org/alexDarcy/shelly-examples.svg)
+
 To learn Haskell, I decided to convert my Bash/Perl scripts into Haskell using
 Shelly. Details of the scripts :
 
