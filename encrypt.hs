@@ -9,7 +9,7 @@
 -- The script must be used in the directory containing the files.
 -- Errors about existing files are managed by GPG.
 -- Usage : 
---    encryption -e 
+--    encryption -c 
 --    encryption -d 
 --
 -- Requirements : gnupg 1
@@ -39,7 +39,7 @@ passFile = do
 -- a flag ("-c" for encryption, "-d" for decryption) and the input file.
 gpg :: FilePath -> FilePath -> FilePath -> FilePath -> Sh()
 gpg input pass flag output = cmd "gpg" args
-  where args = ["-o", input, "--passphrase-file", pass
+  where args = ["-o", input, "--batch", "--passphrase-file", pass
                , flag, output]
 
 -- | Symmetric encryption from FILE to FILE.gpg.
@@ -58,11 +58,12 @@ arguments = Args{encrypt = def, decrypt = def}
 
 main :: IO()
 main = shelly $ do
-    let files = [ "mail_config/.fetchmailrc"
+    let files = [ "mail_config/.offlineimaprc"
                 , "mail_config/.msmtprc"
                 , "mail_config/.procmailrc"
                 , "abook/.abook/addressbook"
-                , "irssi/.irssi/config"]
+--                , "irssi/.irssi/config"
+                ]
 
     args <- liftIO $ cmdArgs arguments
 
