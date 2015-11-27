@@ -16,7 +16,7 @@ build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
 
-executable encrypt
-  main-is:             encrypt.hs
-  build-depends:       base, shelly, text, cmdargs
+executable krypt
+  main-is:             krypt.hs
+  build-depends:       base, shelly, text, cmdargs, system-filepath
   default-language:    Haskell2010
