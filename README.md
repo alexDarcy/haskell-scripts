@@ -10,6 +10,14 @@ Haskell can be installed using [Haskell platform](https://www.haskell.org/platfo
 To install Shelly, `cabal` is the easiest way. [For more details, see this
 reference](https://www.haskell.org/haskellwiki/Cabal-Install).
 
+## Installation
+
+    $ cabal sandbox init
+    $ cabal install --only-dependencies
+    $ cabal build
+
+The executables will be in dist/build/X/X where X is the executable name.
+
 ## `Krypt`
 
 Encrypt or decrypt a list of files using GPG with symmetric encryption. Usage :
@@ -22,10 +30,6 @@ The passphrase is read from `$HOME/.passphrase_files`.
 
 It works for GPG 2.
 
-### Installation
-
-Install the dependencies in a sandbox with cabal and compile all the scripts:
-
-    cabal sandbox init
-    cabal install --only-dependencies
-    cabal build
+## `MplayerRR`
+A wrapper around mplayer. At the moment, it only deactivates the mouse cursor.
+Use it as the normal mplayer.
