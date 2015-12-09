@@ -43,7 +43,7 @@ gpg pass flag input output = cmd "gpg" args
 
 -- | Symmetric encryption from FILE to FILE.gpg.
 encryptSym :: FilePath -> FilePath -> Sh()
-encryptSym pass x = gpg pass "-c" x (x <.> ".gpg")
+encryptSym pass x = gpg pass "-c" x (x <.> "gpg")
 
 -- | Symmetric decryption from FILE.gpg to FILE
 decryptSym :: FilePath -> FilePath -> Sh()
