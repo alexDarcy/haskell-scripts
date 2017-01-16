@@ -6,17 +6,14 @@ shelly-examples
 To learn Haskell, I decided to convert my Bash/Perl scripts into Haskell using
 Shelly. Details of the scripts are given below.
 
-Haskell can be installed using [Haskell platform](https://www.haskell.org/platform/).  
-To install Shelly, `cabal` is the easiest way. [For more details, see this
-reference](https://www.haskell.org/haskellwiki/Cabal-Install).
+Haskell can be installed using Stack.
 
 ## Installation
 
-    $ cabal sandbox init
-    $ cabal install --only-dependencies
-    $ cabal build
+    $ stack init
+    $ stack install
 
-The executables will be in dist/build/X/X where X is the executable name.
+The executables will be in `$HOME/.local/bin`.
 
 ## `Krypt`
 
@@ -33,3 +30,6 @@ It works for GPG 2.
 ## `MplayerRR`
 A wrapper around mplayer. At the moment, it only deactivates the mouse cursor.
 Use it as the normal mplayer.
+
+## `random_wallpaper`
+Set a random wallpaper from a given folder.

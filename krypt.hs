@@ -77,7 +77,6 @@ main :: IO()
 main = shelly $ do
     args <- liftIO $ cmdArgs krypt
     pass <- passphrase
-    --echo $ T.pack $ show $ src args
     case () of _
                 | encrypt args -> do
                     echo "Encrypting" 

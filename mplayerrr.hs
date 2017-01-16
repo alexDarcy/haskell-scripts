@@ -4,6 +4,8 @@
 {-# LANGUAGE DeriveDataTypeable #-}
 
 
+-- Run mplayer without the mouse cursor
+
 module Main where
 
 import Prelude hiding (FilePath)
@@ -20,7 +22,6 @@ mplayerrr = MplayerRR  { file = "" &= args &= typFile }
 main :: IO()
 main = shelly $ do
     args <- liftIO $ cmdArgs mplayerrr
-    --echo $ (file args)
     run "setterm" ["-cursor", "off"]
     run "mplayer" [file args]
     run "setterm" ["-cursor", "on"]
