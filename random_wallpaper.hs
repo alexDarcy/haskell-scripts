@@ -26,4 +26,4 @@ main = shelly $ do
   pics <- lsT . fromText $  dir args
   g <- liftIO newStdGen
   let (i, _) = randomR (0, length pics-1) g :: (Int, StdGen)
-  run "feh" ["--bg-center", pics !! i]
+  run "feh" ["--bg-max", pics !! i]
