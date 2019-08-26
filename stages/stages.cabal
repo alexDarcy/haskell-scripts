@@ -1,0 +1,38 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a583a1e40d6c22081f5f204463acceca24a0908a252b6edfcd1e2129a24f58f4
+
+name:           stages
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/stages#readme>
+homepage:       https://github.com/githubuser/stages#readme
+bug-reports:    https://github.com/githubuser/stages/issues
+author:         Alexis Praga
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/stages
+
+executable stages-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_stages
+  hs-source-dirs:
+      ./.
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      attoparsec
+    , base >=4.7 && <5
+    , bytestring
+    , text
+  default-language: Haskell2010

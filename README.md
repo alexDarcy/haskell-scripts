@@ -1,10 +1,10 @@
-shelly-examples
+Haskell-scripts
 ===============
 
 ![Build status](https://travis-ci.org/alexDarcy/shelly-examples.svg)
 
-To learn Haskell, I decided to convert my Bash/Perl scripts into Haskell using
-Shelly. Details of the scripts are given below.
+To learn Haskell, I decided to convert my Bash/Perl scripts into Haskell. Some
+of theme use Shelly. Details of the scripts are given below.
 
 Haskell can be installed using Stack.
 
@@ -15,7 +15,7 @@ Haskell can be installed using Stack.
 
 The executables will be in `$HOME/.local/bin`.
 
-## `Krypt`
+## `Krypt` (Shelly)
 
 Encrypt or decrypt a list of files using GPG with symmetric encryption. Usage :
 
@@ -27,9 +27,12 @@ The passphrase is read from `$HOME/.passphrase_files`.
 
 It works for GPG 2.
 
-## `MplayerRR`
+## `MplayerRR` (Shelly)
 A wrapper around mplayer. At the moment, it only deactivates the mouse cursor.
 Use it as the normal mplayer.
 
-## `random_wallpaper`
+## `random_wallpaper` (Shelly)
 Set a random wallpaper from a given folder.
+
+## Parser example with attoparsec : `stages`
+Work in progress. The idea is to count identical lines in a given format.
