@@ -6,14 +6,18 @@ Haskell-scripts
 To learn Haskell, I decided to convert my Bash/Perl scripts into Haskell. Some
 of theme use Shelly. Details of the scripts are given below.
 
-Haskell can be installed using Stack.
 
-## Installation
+## UsageInstallation
+We need `stack` ! But we won't configure any projects... so just run
 
-    $ stack init
-    $ stack install
+    $ stack myscript.hs
 
-The executables will be in `$HOME/.local/bin`.
+or 
+
+    $ chmod 755 myscript.hs
+    $ ./myscript.hs
+
+Beware, the first time, stack will install a lot of dependencies !
 
 ## `Krypt` (Shelly)
 

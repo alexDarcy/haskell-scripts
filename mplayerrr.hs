@@ -1,3 +1,6 @@
+#!/usr/bin/env stack
+{- stack --resolver lts-12.9 script -}
+
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ExtendedDefaultRules #-}
 {-# OPTIONS_GHC -fno-warn-type-defaults #-}
