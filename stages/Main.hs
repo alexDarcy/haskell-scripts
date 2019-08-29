@@ -11,58 +11,104 @@ module Main where
 -- Puis on utilise le preprocessing (cf preprocessing.sh) en vérifiant qu'il n'y
 -- a pas eu de lignes de perdues
 
-import Data.Word
 import Data.Either
 import Data.Attoparsec.Text
-import Control.Applicative
+import Data.Attoparsec.Combinator
 import qualified Data.Text.IO as TIO
 import qualified Data.Text as T
 import Data.List as L
+import Text.Printf
 
-data Stage = Stage {id :: String
-  , unit :: String
-  , place :: String
-  , boss :: String } 
+data Job = Job {id :: T.Text
+  , unit :: T.Text
+  , place :: T.Text
+  , boss :: T.Text}
+  deriving (Show)
 
-instance Show Stage where
-  show (Stage i u p b) = show u
+-- instance Show Job where
+--   show (Job i u p b) = show u
 
-instance Eq Stage where
-  (==) (Stage _ u _ _) (Stage _ u' _ _) = u == u'
+instance Eq Job where
+  (==) (Job _ u _ _) (Job _ u' _ _) = u == u'
 
-instance Ord Stage where
-  (compare) (Stage _ u _ _) (Stage _ u' _ _) = compare u u'
+instance Ord Job where
+  (compare) (Job _ u _ _) (Job _ u' _ _) = compare u u'
 
-content = notChar '#'
 
-oneStage :: Parser Stage 
-oneStage = do
-  id <- many content
-  char '#'
-  unit  <- many content
-  char '#'
-  place <- many content
-  char '#'
-  boss <- manyTill content endOfLine
-  return $ Stage id unit place boss
+countIdentical :: [Job] -> [(Job, Int)]
+countIdentical x = map (\l -> (head l, length l)) (L.group . L.sort $ x)
 
-allStages :: Parser [Stage]
-allStages  = many $ oneStage 
+-- Print a Job with padding and the number of occurences
+-- Compatible with uniq output
+printEntry :: (Job, Int) -> T.Text
+printEntry (x, y) = T.pack $ printf "%7d %s" y (unit x)
 
-process = do 
-  file <- TIO.readFile "test.txt" 
-  let all = fromRight [] (parseOnly allStages file)
-  print $ length all
-  return all
+--E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
+parseID :: Parser T.Text
+parseID  = do
+  id1 <- letter
+  id2 <- decimal
+  return $ T.concat [T.singleton id1, T.pack . show $ id2]
 
-printEntry :: (Stage, Int) -> T.Text
-printEntry (x, y) = T.concat [ T.pack (unit x),  ";", T.pack (show y)]
+listPlaces = [
+  "C.H.S."
+  , "C.H.G."
+  , "C.C.E.G."
+  , "H.C."
+  , "C.H."
+  , "H.B."
+  , "I.C.L."
+  , "Bel Air"
+  , "C.H."
+  , "C.H.R."
+  , "S.J."
+  , "H.B."
+  , "H.E."
+  , "C.H."
+  , "Cabinet médical"
+  , "Mat"
+  , "C.H."
+  , "H.M.M."
+  , "H.C."
+  , "St-Charles"
+  , "H.E."
+  , "I.R.R."
+  , "C.P.N."
+  , "S.J."]
+
+isPlace = choice $ map string l
+  where l = map (\x -> T.append (T.pack x) (T.pack "  ")) listPlaces
+
+
+-- Structure :
+-- ID NAME PLACE BOSS
+-- ID = a letter followed by 3 digits
+-- name = a set of characters up to a place
+-- place = search into a list of places *and* 2 spaces after (importsant !)
+-- boss = everything else
+parseJob :: Parser Job
+parseJob = do
+  id <- parseID
+  space *> many1 space
+  -- spaces are important
+  s <- manyTill anyChar (lookAhead (isPlace))
+  let s' = T.strip . T.pack $ s
+  place <- isPlace
+  space *> many1 space
+  boss <- many1 letter
+  return $ Job id  s' place (T.strip . T.pack $ boss)
+
+-- parseJobs = many $ parseJob <* endOfLine
+-- runTest = parseOnly parseJobs $ T.unlines [line1, line2]
 
 main = do
-  l <- process 
-  -- Count duplicates
-  let noDup = map (\l -> (head l, length l)) (L.group . L.sort $ l)
-  let content = T.unlines $ map printEntry noDup
-  let content' = T.concat [T.pack "service;nbpostes\n", content]
-  print content'
-  TIO.writeFile "postesA1S2.csv" $ content'
+  file <- TIO.readFile "test.txt"
+  -- let all = fromRight [] (parseOnly parseJobs file)
+  -- Try to read a job by each line
+  let all = map (parseOnly parseJob) $ T.lines file
+  -- Filter non matching lines
+  let all' =  rights all
+  let output =  map printEntry $ countIdentical all'
+  let output' = T.unlines $ T.pack "service;nbpostes" : output
+  print output'
+  TIO.writeFile "output.csv" $ output'
