@@ -1,431 +1,487 @@
-E190#2° service et UMD C.H.S. Sarreguemines#C.H.S.#MATEI
-E312#Accueil - urgences Epinal#C.H.#HOMEL
-E54#Accueil des Urgences#H.C.#NACE
-E54#Accueil des Urgences#H.C.#NACE
-E54#Accueil des Urgences#H.C.#NACE
-E54#Accueil des Urgences#H.C.#NACE
-E54#Accueil des Urgences#H.C.#NACE
-E54#Accueil des Urgences#H.C.#NACE
-E54#Accueil des Urgences#H.C.#NACE
-E308#Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé)#C.H.R.#BRAUN
-E308#Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé)#C.H.R.#BRAUN
-E308#Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé)#C.H.R.#BRAUN
-E307#Accueil des Urgences Forbach#C.H.#CLAUSSNER
-E321#Accueil des Urgences SMUR/UHCD Thionville (non logé)#Bel Air#SATTONNET
-E321#Accueil des Urgences SMUR/UHCD Thionville (non logé)#Bel Air#SATTONNET
-E161#Accueil et Réception des Urgences Sarreguemines#C.H.#SERIS
-E159#Accueil urgences - SMUR - UHCD Mont-Saint-Martin#C.H.#ABOTCHI
-E160#Accueil-Urgences - SMUR Sarrebourg#C.H.#SCHNEIDER
-E425#Anatomie Pathologique Brabois#H.B.#GAUCHOTTE
-E227#Anatomie Pathologique Central#H.C.#GAUCHOTTE
-E58#Anesthésie COTA / CGU (+ Maternité)#H.C.#BOUAZIZ
-E58#Anesthésie COTA / CGU (+ Maternité)#H.C.#BOUAZIZ
-E323#Anesthésie Réanimation Chirurgicale Central#H.C.#AUDIBERT
-E323#Anesthésie Réanimation Chirurgicale Central#H.C.#AUDIBERT
-E323#Anesthésie Réanimation Chirurgicale Central#H.C.#AUDIBERT
-E90#Anesthésie-Réanimation Chirurgicale Brabois#H.B.#MEISTELMAN Claude / LOSSER Marie-Reine
-E90#Anesthésie-Réanimation Chirurgicale Brabois#H.B.#MEISTELMAN Claude / LOSSER Marie-Reine
-E90#Anesthésie-Réanimation Chirurgicale Brabois#H.B.#MEISTELMAN Claude / LOSSER Marie-Reine
-E183#Cardiologie Epinal#C.H.#ADMANT
-E185#Cardiologie générale et réadaptation CV - Médecine polyvalente Hayange
-#C.H.R.#KHALIFÉ
-E187#Cardiologie Saint-Dié#C.H.#BRAGARD
-E188#Cardiologie Sarrebourg#C.H.#COULON
-E287#Cardiologie Thionville#Bel Air#ALDAOUD
-E12#Centre Antipoison et de Toxico-vigilance#H.C.#MANEL
-E67#Centre Paul Spilmann : Soins de Suite Réadaption Gériatrique#S.J.#JONVEAUX
-E67#Centre Paul Spilmann : Soins de Suite Réadaption Gériatrique#S.J.#JONVEAUX
-E11#Centre régional de pharmacovigilance de Lorraine#H.C.#GILLET
-E216#Chirurgie A (viscérale) Briey#C.H.R.#SNEN
-E177#Chirurgie B (viscérale) Saint-Dié#C.H.G.#ULMER
-E318#Chirurgie Cardiaque Vasculaire et Transplantation#H.B.#MAUREIRA
-E318#Chirurgie Cardiaque Vasculaire et Transplantation#H.B.#MAUREIRA
-E318#Chirurgie Cardiaque Vasculaire et Transplantation#H.B.#MAUREIRA
-E318#Chirurgie Cardiaque Vasculaire et Transplantation#H.B.#MAUREIRA
-E39#Chirurgie de la Main#C.C.E.G.#DAUTEL
-E39#Chirurgie de la Main#C.C.E.G.#DAUTEL
-E39#Chirurgie de la Main#C.C.E.G.#DAUTEL
-E39#Chirurgie de la Main#C.C.E.G.#DAUTEL
-E39#Chirurgie de la Main#C.C.E.G.#DAUTEL
-E39#Chirurgie de la Main#C.C.E.G.#DAUTEL
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E36#Chirurgie Digestive et Générale#H.B.#BRESLER
-E174#Chirurgie générale et digestive Sarreguemines#C.H.G.#FIRTION
-E38#Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois#H.C.#PEREZ
-E38#Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois#H.C.#PEREZ
-E38#Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois#H.C.#PEREZ
-E49#Chirurgie Infantile Orthopédique#H.E.#JOURNEAU
-E49#Chirurgie Infantile Orthopédique#H.E.#JOURNEAU
-E50#Chirurgie Infantile Viscérale#H.E.#LEMELLE
-E45#Chirurgie Maxillo Faciale, Chirurgie Plastique Reconstructrice#H.C.#SIMON
-E45#Chirurgie Maxillo Faciale, Chirurgie Plastique Reconstructrice#H.C.#SIMON
-E254#Chirurgie Orthopédique et Traumatologique - Chirurgie B Metz Mercy#C.H.R.#IRRAZI
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E40#Chirurgie Orthopédique et Traumatologique C.C.E.G.#C.C.E.G.#SIRVEAUX
-E175#Chirurgie orthopédique et traumatologique Saint-Dié#C.H.#MACHOUR
-E33#Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA)#H.C.#MAINARD
-E33#Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA)#H.C.#MAINARD
-E33#Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA)#H.C.#MAINARD
-E172#Chirurgie plastique reconstructive et maxillo-faciale Metz Mercy#C.H.R.#TALBI
-E550#Chirurgie Thoracique#H.B.#SIAT
-E550#Chirurgie Thoracique#H.B.#SIAT
-E271#Chirurgie thoracique et cardio vasculaire Metz Mercy#C.H.R.#SCHJOTH
-E450#Chirurgie Urologique Thionville#Bel Air#ERB
-E35#Chirurgie Vasculaire#H.B.#MALIKOV
-E35#Chirurgie Vasculaire#H.B.#MALIKOV
-E35#Chirurgie Vasculaire#H.B.#MALIKOV
-E35#Chirurgie Vasculaire#H.B.#MALIKOV
-E244#Chirurgie Viscérale et Bariatrique Thionville#Bel Air#HOURNAU
-E233#Chirurgie viscérale et urologique Lunéville#C.H.#COURBEY
-E71#CIC 1433 Epidémiologie clinique (stage recherche)#H.B.#GUILLEMIN Francis / Dr EPSTEIN Jonathan
-E502#CIC en cardiologie INSERM (stage recherche)#H.B.#ZANNAD
-E522#CIC en imagerie médicale - INSERM 1433 (stage recherche)#H.B.#FELBLINGER
-E140#Court Séjour, SSR, HJ Gériatrique Thionville#Bel Air#AZZEMOU
-E461#Département d'Oncologie Médicale - Unité A#I.C.L.#GEOFFROIS
-E461#Département d'Oncologie Médicale - Unité A#I.C.L.#GEOFFROIS
-E461#Département d'Oncologie Médicale - Unité A#I.C.L.#GEOFFROIS
-E461#Département d'Oncologie Médicale - Unité A#I.C.L.#GEOFFROIS
-E461#Département d'Oncologie Médicale - Unité A#I.C.L.#GEOFFROIS
-E461#Département d'Oncologie Médicale - Unité A#I.C.L.#GEOFFROIS
-E61#Département d'Ophtalmologie#H.B.#BERROD
-E61#Département d'Ophtalmologie#H.B.#BERROD
-E61#Département d'Ophtalmologie#H.B.#BERROD
-E26#Département de Dermatologie et Allergologie#H.B.#SCHMUTZ
-E26#Département de Dermatologie et Allergologie#H.B.#SCHMUTZ
-E26#Département de Dermatologie et Allergologie#H.B.#SCHMUTZ
-E26#Département de Dermatologie et Allergologie#H.B.#SCHMUTZ
-E80#Département de Médecine Interne et Immunologie Clinique#H.B.#JAUSSAUD
-E80#Département de Médecine Interne et Immunologie Clinique#H.B.#JAUSSAUD
-E80#Département de Médecine Interne et Immunologie Clinique#H.B.#JAUSSAUD
-E80#Département de Médecine Interne et Immunologie Clinique#H.B.#JAUSSAUD
-E80#Département de Médecine Interne et Immunologie Clinique#H.B.#JAUSSAUD
-E43#Département de Neurochirurgie#H.C.#CIVIT
-E43#Département de Neurochirurgie#H.C.#CIVIT
-E43#Département de Neurochirurgie#H.C.#CIVIT
-E43#Département de Neurochirurgie#H.C.#CIVIT
-E43#Département de Neurochirurgie#H.C.#CIVIT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E18#Département de Pneumologie#H.B.#CHABOT
-E32#Département de Radiothérapie#I.C.L.#PEIFFERT
-E32#Département de Radiothérapie#I.C.L.#PEIFFERT
-E256#Dermatologie - Ce GIDD Thionville#Bel Air#TRUCHETET
-E256#Dermatologie - Ce GIDD Thionville#Bel Air#TRUCHETET
-E147#Diabétologie SOS Santé Saint-Avold#C.H.#SENG
-E135#Diabétologie, Nutrition, Maladies métaboliques Bar-le-Duc#C.H.#JAN
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E13#Dpt De Cardiologie Et Maladies Cardio-Vasculaires#H.B.#SADOUL
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E5#Endocrinologie Diabétologie et Nutrition#H.B.#GUERCI
-E230#Endocrinologie-Nutrition et Diabétologie Metz Mercy#C.H.R.#CREA
-E136#Endocrinologie-Nutrition et Diabétologie Thionville#Bel Air#CREA
-E453#Evaluation et Information Médicales#S.J.#JAY
-E17#Exploration de la Fonction Respiratoire et d'Aptitude à l'Exercice#H.B.#CHENUEL
-E17#Exploration de la Fonction Respiratoire et d'Aptitude à l'Exercice#H.B.#CHENUEL
-E72#Explorations Fonctionnelles Pédiatriques#H.E.#DEMOULIN-ALEXIKOVA
-E191#Gastro Entérologie Sarreguemines#C.H.#ARDIZZONE
-E234#Généraliste 54 Azerailles (logement possible)#Cabinet médical#BOURDIN
-E245#Généraliste 54 Bayon 1#Cabinet médical#THOMAS
-E439#Généraliste 54 Bayon 3#Cabinet médical#PETAT
-E573#Généraliste 54 Bouxières-aux-Dames#Cabinet médical#JACQUIER
-E293#Généraliste 54 Colombey les Belles#Cabinet médical#PIEROT
-E545#Généraliste 54 Diarville 2#Cabinet médical#HUMBERT
-E475#Généraliste 54 Dieulouard#Cabinet médical#MOUROT-BOYON
-E102#Généraliste 54 Dombasle-sur-Meurthe 3#Cabinet médical#CHEVILLARD
-E535#Généraliste 54 Einville au Jard 2 (logement possible)#Cabinet médical#SUTY
-E436#Généraliste 54 Essey-les-Nancy 2#Cabinet médical#WEISSENBACHER
-E570#Généraliste 54 Laxou 3#Cabinet médical#GONTHIER
-E532#Généraliste 54 Leyr#Cabinet médical#PAZZOGNA
-E228#Généraliste 54 Lunéville (logement possible)#Cabinet médical#BERNARD
-E29#Généraliste 54 Lunéville 4#Cabinet médical#PELT
-E474#Généraliste 54 Nancy 14#Cabinet médical#HELLUY
-E531#Généraliste 54 Nancy 17#Cabinet médical#PRUNIER
-E536#Généraliste 54 Nancy 18#Cabinet médical#THEBAULT
-E433#Généraliste 54 Pompey#Cabinet médical#FRANCOIS
-E552#Généraliste 54 Pont-à-Mousson 3#Cabinet médical#TROESTER
-E110#Généraliste 54 Pulnoy 1#Cabinet médical#PRELOT-CLAUDON
-E596#Généraliste 54 Seichamps 3#Cabinet médical#COURTAULT
-E492#Généraliste 54 St Nicolas de Port#Cabinet médical#GRANG
-E574#Généraliste 54 Toul 4#Cabinet médical#CHORT
-E561#Généraliste 54 Tucquegnieux#Cabinet médical#DESJEUNES
-E432#Généraliste 54 Varangéville#Cabinet médical#HINGRAY
-E337#Généraliste 54 Villers lès Nancy 4#Cabinet médical#ARDIZIO
-E211#Généraliste 55 Belleville / Meuse#Cabinet médical#DEFAUX
-E414#Généraliste 55 Dombasle-en-Argonne 3#Cabinet médical#KAISER
-E345#Généraliste 55 Marville (possibilité logement)#Cabinet médical#DEFAUX
-E346#Généraliste 55 Revigny-sur-Ornain (logement possible)#Cabinet médical#BASTIDE-BLANDIN-BOUCHY-ROCHEBOUET-VALLET
-E547#Généraliste 55 Thierville-sur-Meuse (logement possible)#Cabinet médical#ROYER
-E565#Généraliste 55 Vaucouleurs (logement possible)#Cabinet médical#THILL
-E469#Généraliste 55 Void Vacon 1#Cabinet médical#JOUANNEAU
-E498#Généraliste 55 Void Vacon 3 (logement possible)#Cabinet médical#REMOT
-E295#Généraliste 57 Abreschviller (logement possible)#Cabinet médical#THOMAS
-E350#Généraliste 57 Augny#Cabinet médical#LEUPOLD
-E595#Généraliste 57 Beuvange-sous-St Michel#Cabinet médical#BRAUER
-E354#Généraliste 57 Boulange#Cabinet médical#ATTARI
-E458#Généraliste 57 Boulay 1#Cabinet médical#BEYEL
-E356#Généraliste 57 Boulay 3#Cabinet médical#BIRGE
-E597#Généraliste 57 Boulay 4#Cabinet médical#GIRY
-E358#Généraliste 57 Dieuze (logement possible)#Cabinet médical#PRZYCHOCKI
-E598#Généraliste 57 Ennery 2#Cabinet médical#GRASS
-E454#Généraliste 57 Lessy#Cabinet médical#SCHUCK
-E415#Généraliste 57 Metz 1#Cabinet médical#SCOMAZZON
-E599#Généraliste 57 Metz 10#Cabinet médical#NIPPERT
-E604#Généraliste 57 Metz 11#Cabinet médical#DEITSCH
-E581#Généraliste 57 Morhange#Cabinet médical#BARTHELEMY
-E372#Généraliste 57 Rozerieulles#Cabinet médical#GUILLAUMIN
-E537#Généraliste 57 Sarralbe#Cabinet médical#KOBIS
-E373#Généraliste 57 Sarrebourg (logement possible)#Cabinet médical#DENEVERT
-E303#Généraliste 57 Sarreguemines 1#Cabinet médical#WISSLER-KOENIG
-E501#Généraliste 57 Sarreguemines 2#Cabinet médical#GALICHET COTOARBA
-E374#Généraliste 57 Stiring-Wendel#Cabinet médical#GILLE
-E546#Généraliste 57 Talange 6#Cabinet médical#de VERBIZIER
-E529#Généraliste 57 Thionville 3#Cabinet médical#RAKOTOMAMONJY
-E592#Généraliste 57 Verny#Cabinet médical#HANRIOT
-E423#Généraliste 88 Anould#Cabinet médical#VERGIER
-E582#Généraliste 88 Archettes 1#Cabinet médical#COUVAL-PATERNOTTE
-E588#Généraliste 88 Bulgnéville 3 (logement possible)#Cabinet médical#DELAPORTE
-E548#Généraliste 88 Charmois l'Orgueilleux (logement possible)#Cabinet médical#BEIN
-E543#Généraliste 88 Dommartin-les-Remiremont 1 (logement possible)#Cabinet médical#SCHEER
-E586#Généraliste 88 Dommartin-les-Remiremont 2 (logement possible)#Cabinet médical#VAUTHIER
-E441#Généraliste 88 Epinal 1#Cabinet médical#LEROY
-E577#Généraliste 88 Epinal 10#Cabinet médical#PETITGENET
-E564#Généraliste 88 Epinal 7#Cabinet médical#RAIDELET
-E576#Généraliste 88 Granges sur Vologne (logement possible)#Cabinet médical#BOIVIN
-E300#Généraliste 88 Le Val d'Ajol 1 (possibilité logement)#Cabinet médical#ZIMMERMANN
-E301#Généraliste 88 Le Val d'Ajol 3 (possibilité logement)#Cabinet médical#ZIMMERMANN
-E393#Généraliste 88 Mirecourt 1#Cabinet médical#EDGARD
-E460#Généraliste 88 Rambervillers 1 (logement possible)#Cabinet médical#GAUDIN
-E600#Généraliste 88 Raon l'Etape#Cabinet médical#WARY
-E259#Généraliste 88 Remiremont 1#Cabinet médical#PINOT
-E261#Généraliste 88 Remiremont 2#Cabinet médical#PIQUARD
-E476#Généraliste 88 Saint-Dié 3#Cabinet médical#SCHMITT
-E465#Généraliste 88 Vagney#Cabinet médical#LETERTRE
-E558#Gynécologie médicale#Mat#WERYHA
-E558#Gynécologie médicale#Mat#WERYHA
-E243#Gynécologie Obstétrique Forbach#C.H.#ROMAC
-E108#Gynécologie Obstétrique Metz#H.M.M.#WELTER Eric / SECONDE Aude
-E108#Gynécologie Obstétrique Metz#H.M.M.#WELTER Eric / SECONDE Aude
-E106#Gynécologie Obstétrique Remiremont#C.H.#BOUSSOUF
-E97#Gynécologie Obstétrique Sarreguemines#C.H.#SI HAMMANE
-E107#Gynécologie Obstétrique Thionville#Bel Air#WELTER Eric / OLIERIC Marie-France
-E107#Gynécologie Obstétrique Thionville#Bel Air#WELTER Eric / OLIERIC Marie-France
-E91#Gynécologie obstétrique Verdun#C.H.#PANNEQUIN
-E95#Gynécologie-obstétrique - Maternité Briey#C.H.R.#LEMARIE
-E94#Gynécologie-obstétrique St Dié#C.H.#HEID
-E31#Hématologie Biologique#H.B.#DEVIGNES
-E1#Hématologie et Médecine Interne#H.B.#FEUGIER
-E1#Hématologie et Médecine Interne#H.B.#FEUGIER
-E1#Hématologie et Médecine Interne#H.B.#FEUGIER
-E1#Hématologie et Médecine Interne#H.B.#FEUGIER
-E1#Hématologie et Médecine Interne#H.B.#FEUGIER
-E329#Hépato gastro-entérologie et médecine Thionville#Bel Air#GILBERT
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E22#Hépato-Gastro-Entérologie#H.B.#BRONOWICKI
-E55#Imagerie Guilloz#H.C.#BLUM
-E55#Imagerie Guilloz#H.C.#BLUM
-E417#Imagerie médicale Sarreguemines#C.H.#LEVEQUE Christian / ZELLER Cyrille
-E126#Laboratoire de Génétique#H.B.#BONNET
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E24#Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD#H.B.#HOEN
-E92#Maternité Mont-St-Martin#C.H.#STAMER
-E73#Médecine / court séjour gériatrique St-Charles#St-Charles#LE BRUN
-E73#Médecine / court séjour gériatrique St-Charles#St-Charles#LE BRUN
-E73#Médecine / court séjour gériatrique St-Charles#St-Charles#LE BRUN
-E73#Médecine / court séjour gériatrique St-Charles#St-Charles#LE BRUN
-E73#Médecine / court séjour gériatrique St-Charles#St-Charles#LE BRUN
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E2#Médecine B - Gériatrie#H.B.#PERRET GUILLAUME
-E145#Médecine B à orientation pneumologique Saint-Dié#C.H.#MARANGONI
-E193#Médecine B Hépato-Gastro-Entérologie Metz Mercy#C.H.R.#KULL
-E139#Médecine Gériatrique Aiguë Metz Mercy#C.H.R.#BLETTNER
-E141#Médecine Gériatrique Saint-Dié#C.H.#RUSSO
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E46#Médecine Infantile#H.E.#FEILLET
-E142#Médecine Interne et Hématologie Metz Mercy#C.H.R.#DORVAUX Véronique / MICHEL Jessica
-E149#Médecine interne et Pneumologie Bar-le-Duc#C.H.#EVON
-E150#Médecine interne Sarrebourg#C.H.#JOUIN
-E246#Médecine Légale#H.B.#MARTRILLE
-E196#Médecine nucléaire Metz Mercy#C.H.R.#BEN MAHMOUD
-E253#Médecine orientation Cardiologie Metz Mercy#C.H.R.#KHALIFÉ
-E253#Médecine orientation Cardiologie Metz Mercy#C.H.R.#KHALIFÉ
-E208#Médecine physique - réadaptation Thionville#Bel Air#MOUGET-GRANDPIERRE
-E30#Médecine physique et de réadaptation - Centre pour adultes#I.R.R.#PAYSANT
-E30#Médecine physique et de réadaptation - Centre pour adultes#I.R.R.#PAYSANT
-E30#Médecine physique et de réadaptation - Centre pour adultes#I.R.R.#PAYSANT
-E30#Médecine physique et de réadaptation - Centre pour adultes#I.R.R.#PAYSANT
-E151#Médecine polyvalente et gériatrique Sarreguemines#C.H.#BOCKEL
-E53#Néonatologie - Médecine et Réanimation Néonatale#Mat#HASCOET
-E53#Néonatologie - Médecine et Réanimation Néonatale#Mat#HASCOET
-E53#Néonatologie - Médecine et Réanimation Néonatale#Mat#HASCOET
-E53#Néonatologie - Médecine et Réanimation Néonatale#Mat#HASCOET
-E53#Néonatologie - Médecine et Réanimation Néonatale#Mat#HASCOET
-E53#Néonatologie - Médecine et Réanimation Néonatale#Mat#HASCOET
-E19#Néphrologie#H.B.#FRIMAT
-E19#Néphrologie#H.B.#FRIMAT
-E19#Néphrologie#H.B.#FRIMAT
-E19#Néphrologie#H.B.#FRIMAT
-E19#Néphrologie#H.B.#FRIMAT
-E19#Néphrologie#H.B.#FRIMAT
-E310#Néphrologie Dialyse Metz Mercy#C.H.R.#SAVENKOFF
-E408#Neurochirurgie pédiatrique#H.E.#KLEIN
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E20#Neurologie#H.C.#DEBOUVERIE
-E200#Neurologie Epinal#C.H.#HUTTIN
-E198#Neurologie Metz Mercy#C.H.R.#DUCROCQ
-E198#Neurologie Metz Mercy#C.H.R.#DUCROCQ
-E65#Neuroradiologie Diagnostique et Thérapeutique#H.C.#BRACARD
-E65#Neuroradiologie Diagnostique et Thérapeutique#H.C.#BRACARD
-E59#O.R.L. Chirurgie Cervico Faciale#H.B.#JANKOWSKI
-E59#O.R.L. Chirurgie Cervico Faciale#H.B.#JANKOWSKI
-E59#O.R.L. Chirurgie Cervico Faciale#H.B.#JANKOWSKI
-E129#Onco-hémato-Pédiatrique#H.E.#CHASTAGNER
-E129#Onco-hémato-Pédiatrique#H.E.#CHASTAGNER
-E129#Onco-hémato-Pédiatrique#H.E.#CHASTAGNER
-E129#Onco-hémato-Pédiatrique#H.E.#CHASTAGNER
-E41#Oncologie Chirurgicale - Département de Chirurgie#I.C.L.#DOLIVET
-E41#Oncologie Chirurgicale - Département de Chirurgie#I.C.L.#DOLIVET
-E41#Oncologie Chirurgicale - Département de Chirurgie#I.C.L.#DOLIVET
-E41#Oncologie Chirurgicale - Département de Chirurgie#I.C.L.#DOLIVET
-E41#Oncologie Chirurgicale - Département de Chirurgie#I.C.L.#DOLIVET
-E153#Oncologie médicale Metz Mercy#C.H.R.#LONGO
-E154#Oncologie médicale Thionville#Bel Air#AL AUKLA
-E201#Ophtalmologie - Site Mercy et Legouest Metz#C.H.R.#PERONE
-E305#ORL et chirurgie cervico-faciale Metz Mercy#C.H.R.#STRINGINI
-E168#Pédiatrie - Néonatologie Epinal#C.H.#AUBURTIN
-E164#Pédiatrie Briey#C.H.R.#GRECO
-E247#Pédiatrie Metz Mercy#C.H.R.#BILLAUD
-E247#Pédiatrie Metz Mercy#C.H.R.#BILLAUD
-E224#Pédiatrie Néonatologie Forbach#C.H.#LEGAGNEUR
-E166#Pédiatrie Sarreguemines#C.H.#LOUNIS
-E167#Pédiatrie Thionville#Bel Air#SCHNEIDER
-E252#Pneumologie Metz Mercy#C.H.R.#PAILLOT
-E206#Pneumologie Sarreguemines#C.H.#GRAMADA
-E203#Pneumologie Thionville#Bel Air#BOTRUS
-E83#Pôle 6 - Pôle Universitaire de Psychiatrie et Psychologie Clinique#C.P.N.#KAHN
-E83#Pôle 6 - Pôle Universitaire de Psychiatrie et Psychologie Clinique#C.P.N.#KAHN
-E56#Pôle de la Femme#Mat#MOREL
-E56#Pôle de la Femme#Mat#MOREL
-E56#Pôle de la Femme#Mat#MOREL
-E56#Pôle de la Femme#Mat#MOREL
-E56#Pôle de la Femme#Mat#MOREL
-E56#Pôle de la Femme#Mat#MOREL
-E56#Pôle de la Femme#Mat#MOREL
-E186#Pôle de Médecine - Unité de Cardiologie Neufchâteau#C.H.#THUUS
-E143#Pôle de Médecine Site de Neufchâteau#C.H.#DOUART Patrick
-E82#Pôle du Grand Nancy#C.P.N.#SCHWAN
-E82#Pôle du Grand Nancy#C.P.N.#SCHWAN
-E82#Pôle du Grand Nancy#C.P.N.#SCHWAN
-E82#Pôle du Grand Nancy#C.P.N.#SCHWAN
-E51#Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent#H.E.#KABUTH
-E51#Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent#H.E.#KABUTH
-E51#Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent#H.E.#KABUTH
-E96#Pôle Mère Enfant Site de Neufchâteau#C.H.#OPREA
-E125#Psychiatrie Infanto-juvénile n° 2 Lunéville - CMP La Madeleine#C.P.N.#SAAD SAINT GILLES Stéphanie / GROSS M-J
-E64#Radiologie adultes#H.B.#CROISE-LAURENT
-E64#Radiologie adultes#H.B.#CROISE-LAURENT
-E64#Radiologie adultes#H.B.#CROISE-LAURENT
-E63#Radiologie enfants#H.E.#CROISE-LAURENT
-E63#Radiologie enfants#H.E.#CROISE-LAURENT
-E21#Réanimation Médicale Brabois#H.B.#LEVY
-E21#Réanimation Médicale Brabois#H.B.#LEVY
-E21#Réanimation Médicale Brabois#H.B.#LEVY
-E21#Réanimation Médicale Brabois#H.B.#LEVY
-E21#Réanimation Médicale Brabois#H.B.#LEVY
-E25#Réanimation Médicale Central#H.C.#BOLLAERT
-E25#Réanimation Médicale Central#H.C.#BOLLAERT
-E25#Réanimation Médicale Central#H.C.#BOLLAERT
-E25#Réanimation Médicale Central#H.C.#BOLLAERT
-E25#Réanimation Médicale Central#H.C.#BOLLAERT
-E313#Réanimation Metz Mercy (non logé)#C.H.R.#GETTE
-E313#Réanimation Metz Mercy (non logé)#C.H.R.#GETTE
-E100#Réanimation Pédiatrique Spécialisée#H.E.#BOUSSARD
-E23#Rhumatologie#H.B.#CHARY-VALCKENAERE
-E23#Rhumatologie#H.B.#CHARY-VALCKENAERE
-E23#Rhumatologie#H.B.#CHARY-VALCKENAERE
-E23#Rhumatologie#H.B.#CHARY-VALCKENAERE
-E75#SAMU-SMUR#H.C.#NACE
-E317#SAU-UHCD Verdun (logé ?)#C.H.#BAUGNON
-E169#Service de Pédopsychiatrie - CMP infanto-juvénile Briey#C.H.R.#BERTEL
-E457#Service Interdisciplinaire de Soins Oncologiques de Support - Douleur#I.C.L.#ROUSSELOT
-E99#Structure d'Urgences Pédiatriques (POSU-SUP)#H.E.#BORSA-DORION
-E99#Structure d'Urgences Pédiatriques (POSU-SUP)#H.E.#BORSA-DORION
-E99#Structure d'Urgences Pédiatriques (POSU-SUP)#H.E.#BORSA-DORION
-E99#Structure d'Urgences Pédiatriques (POSU-SUP)#H.E.#BORSA-DORION
-E99#Structure d'Urgences Pédiatriques (POSU-SUP)#H.E.#BORSA-DORION
-E88#Unité d'Hospitalisation Sécurisée Interrégionale#H.B.#PETON
-E128#Unité de Médecine vasculaire#H.B.#WAHL
-E289#Unité de Post-Urgences Polyvalente (UPUP)#H.C.#VALANCE
-E289#Unité de Post-Urgences Polyvalente (UPUP)#H.C.#VALANCE
-E289#Unité de Post-Urgences Polyvalente (UPUP)#H.C.#VALANCE
-E8#Unité de Soins de Longue Durée (USLD)#S.J.#MANCIAUX
-E8#Unité de Soins de Longue Durée (USLD)#S.J.#MANCIAUX
-E130#Unité de Transplantation Médullaire#H.E.#FEUGIER
-E130#Unité de Transplantation Médullaire#H.E.#FEUGIER
-E163#Urgences - SMUR - ZSTCD Toul#C.H.#DACCORDI
-E162#Urgences SMUR UPATOU Site de Neufchâteau#C.H.#DOUART-LÉGER
-E491#Urgences SOS Santé Saint-Avold#C.H.#HAOUCHINE
-E44#Urologie#H.B.#HUBERT
-E44#Urologie#H.B.#HUBERT
-E44#Urologie#H.B.#HUBERT
-E44#Urologie#H.B.#HUBERT
-E44#Urologie#H.B.#HUBERT
-#
+                                     choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E190     2° service et UMD C.H.S. Sarreguemines                               C.H.S.            MATEI
+E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
+E54      Accueil des Urgences                                                 H.C.              NACE
+E54      Accueil des Urgences                                                 H.C.              NACE
+E54      Accueil des Urgences                                                 H.C.              NACE
+E54      Accueil des Urgences                                                 H.C.              NACE
+E54      Accueil des Urgences                                                 H.C.              NACE
+E54      Accueil des Urgences                                                 H.C.              NACE
+E54      Accueil des Urgences                                                 H.C.              NACE
+E308     Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé)     C.H.R.            BRAUN
+E308     Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé)     C.H.R.            BRAUN
+E308     Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé)     C.H.R.            BRAUN
+E307     Accueil des Urgences Forbach                                         C.H.              CLAUSSNER
+E321     Accueil des Urgences SMUR/UHCD Thionville (non logé)                 Bel Air           SATTONNET
+E321     Accueil des Urgences SMUR/UHCD Thionville (non logé)                 Bel Air           SATTONNET
+E161     Accueil et Réception des Urgences Sarreguemines                      C.H.              SERIS
+E159     Accueil urgences - SMUR - UHCD Mont-Saint-Martin                     C.H.              ABOTCHI
+E160     Accueil-Urgences - SMUR Sarrebourg                                   C.H.              SCHNEIDER
+E425     Anatomie Pathologique Brabois                                        H.B.              VIGNAUD
+E227     Anatomie Pathologique Central                                        H.C.              VIGNAUD
+E58      Anesthésie COTA / CGU (+ Maternité)                                  H.C.              BOUAZIZ
+E58      Anesthésie COTA / CGU (+ Maternité)                                  H.C.              BOUAZIZ
+E323     Anesthésie Réanimation Chirurgicale Central                          H.C.              AUDIBERT
+E323     Anesthésie Réanimation Chirurgicale Central                          H.C.              AUDIBERT
+E323     Anesthésie Réanimation Chirurgicale Central                          H.C.              AUDIBERT
+E90      Anesthésie-Réanimation Chirurgicale Brabois                          H.B.              MEISTELMAN
+E90      Anesthésie-Réanimation Chirurgicale Brabois                          H.B.              MEISTELMAN
+E90      Anesthésie-Réanimation Chirurgicale Brabois                          H.B.              MEISTELMAN
+E183     Cardiologie Epinal                                                   C.H.              ADMANT
+E185     Cardiologie générale et réadaptation CV - Médecine polyvalente Hayange
+                                                                              C.H.R.            KHALIFÉ
+
+Nombre de poste : 30                                                                         Page: 1
+                                   choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E187     Cardiologie Saint-Dié                                                 C.H.           BRAGARD
+E188     Cardiologie Sarrebourg                                                C.H.           COULON
+E287     Cardiologie Thionville                                                Bel Air        ALDAOUD
+E12      Centre Antipoison et de Toxico-vigilance                              H.C.           MANEL
+E67      Centre Paul Spilmann : Soins de Suite Réadaption Gériatrique          S.J.           JONVEAUX
+E11      Centre régional de pharmacovigilance de Lorraine                      H.C.           GILLET
+E216     Chirurgie A (viscérale) Briey                                         C.H.R.         SNEN
+E177     Chirurgie B (viscérale) Saint-Dié                                     C.H.G.         ULMER
+E318     Chirurgie Cardiaque Vasculaire et Transplantation                     H.B.           MAUREIRA
+E318     Chirurgie Cardiaque Vasculaire et Transplantation                     H.B.           MAUREIRA
+E318     Chirurgie Cardiaque Vasculaire et Transplantation                     H.B.           MAUREIRA
+E318     Chirurgie Cardiaque Vasculaire et Transplantation                     H.B.           MAUREIRA
+E318     Chirurgie Cardiaque Vasculaire et Transplantation                     H.B.           MAUREIRA
+E39      Chirurgie de la Main                                                  C.C.E.G.       DAUTEL
+E39      Chirurgie de la Main                                                  C.C.E.G.       DAUTEL
+E39      Chirurgie de la Main                                                  C.C.E.G.       DAUTEL
+E39      Chirurgie de la Main                                                  C.C.E.G.       DAUTEL
+E39      Chirurgie de la Main                                                  C.C.E.G.       DAUTEL
+E39      Chirurgie de la Main                                                  C.C.E.G.       DAUTEL
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E36      Chirurgie Digestive et Générale                                       H.B.           BRESLER
+E174     Chirurgie générale et digestive Sarreguemines                         C.H.G.         FIRTION
+E38      Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois   H.C.           REIBEL
+E38      Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois   H.C.           REIBEL
+E38      Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois   H.C.           REIBEL
+
+Nombre de poste : 60                                                                       Page: 2
+                                   choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E49      Chirurgie Infantile Orthopédique                                     H.E.            JOURNEAU
+E49      Chirurgie Infantile Orthopédique                                     H.E.            JOURNEAU
+E50      Chirurgie Infantile Viscérale                                        H.E.            LEMELLE
+E45      Chirurgie Maxillo Faciale, Chirurgie Plastique Reconstructrice       H.C.            SIMON
+E45      Chirurgie Maxillo Faciale, Chirurgie Plastique Reconstructrice       H.C.            SIMON
+E254     Chirurgie Orthopédique et Traumatologique - Chirurgie B Metz Mercy   C.H.R.          IRRAZI
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E40      Chirurgie Orthopédique et Traumatologique C.C.E.G.                   C.C.E.G.        SIRVEAUX
+E175     Chirurgie orthopédique et traumatologique Saint-Dié                C.H.              MACHOUR
+E33      Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA) H.C.              MAINARD
+E33      Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA) H.C.              MAINARD
+E33      Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA) H.C.              MAINARD
+E33      Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA) H.C.              MAINARD
+E172     Chirurgie plastique reconstructive et maxillo-faciale Metz Mercy     C.H.R.          TALBI
+E550     Chirurgie Thoracique                                                 H.B.            SIAT
+E550     Chirurgie Thoracique                                                 H.B.            SIAT
+E271     Chirurgie thoracique et cardio vasculaire Metz Mercy                 C.H.R.          SCHJOTH
+E450     Chirurgie Urologique Thionville                                      Bel Air         ERB
+E35      Chirurgie Vasculaire                                                 H.B.            MALIKOV
+E35      Chirurgie Vasculaire                                                 H.B.            MALIKOV
+E35      Chirurgie Vasculaire                                                 H.B.            MALIKOV
+E35      Chirurgie Vasculaire                                                 H.B.            MALIKOV
+E233     Chirurgie viscérale et urologique Lunéville                          C.H.            COURBEY
+E71      CIC 1433 Epidémiologie clinique (stage recherche)                    H.B.            GUILLEMIN Francis / Dr EPSTEIN Jonathan
+
+Nombre de poste : 90                                                                       Page: 3
+                                  choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E502     CIC en cardiologie INSERM (stage recherche)                   H.B.                  ZANNAD
+E522     CIC en imagerie médicale - INSERM 1433 (stage recherche)      H.B.                  FELBLINGER
+E140     Court Séjour, SSR, HJ Gériatrique Thionville                  Bel Air               AZZEMOU
+E461     Département d'Oncologie Médicale - Unité A                    I.C.L.                GEOFFROIS
+E461     Département d'Oncologie Médicale - Unité A                    I.C.L.                GEOFFROIS
+E461     Département d'Oncologie Médicale - Unité A                    I.C.L.                GEOFFROIS
+E461     Département d'Oncologie Médicale - Unité A                    I.C.L.                GEOFFROIS
+E461     Département d'Oncologie Médicale - Unité A                    I.C.L.                GEOFFROIS
+E461     Département d'Oncologie Médicale - Unité A                    I.C.L.                GEOFFROIS
+E61      Département d'Ophtalmologie                                   H.B.                  BERROD
+E61      Département d'Ophtalmologie                                   H.B.                  BERROD
+E61      Département d'Ophtalmologie                                   H.B.                  BERROD
+E26      Département de Dermatologie et Allergologie                   H.B.                  SCHMUTZ
+E26      Département de Dermatologie et Allergologie                   H.B.                  SCHMUTZ
+E26      Département de Dermatologie et Allergologie                   H.B.                  SCHMUTZ
+E26      Département de Dermatologie et Allergologie                   H.B.                  SCHMUTZ
+E80      Département de Médecine Interne et Immunologie Clinique       H.B.                  JAUSSAUD
+E80      Département de Médecine Interne et Immunologie Clinique       H.B.                  JAUSSAUD
+E80      Département de Médecine Interne et Immunologie Clinique       H.B.                  JAUSSAUD
+E80      Département de Médecine Interne et Immunologie Clinique       H.B.                  JAUSSAUD
+E80      Département de Médecine Interne et Immunologie Clinique       H.B.                  JAUSSAUD
+E43      Département de Neurochirurgie                                 H.C.                  CIVIT
+E43      Département de Neurochirurgie                                 H.C.                  CIVIT
+E43      Département de Neurochirurgie                                 H.C.                  CIVIT
+E43      Département de Neurochirurgie                                 H.C.                  CIVIT
+E43      Département de Neurochirurgie                                 H.C.                  CIVIT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+
+Nombre de poste : 120                                                                     Page: 4
+                                  choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E18      Département de Pneumologie                                    H.B.                  CHABOT
+E32      Département de Radiothérapie                                  I.C.L.                PEIFFERT
+E32      Département de Radiothérapie                                  I.C.L.                PEIFFERT
+E256     Dermatologie - Ce GIDD Thionville                             Bel Air               TRUCHETET
+E147     Diabétologie SOS Santé Saint-Avold                            C.H.                  SENG
+E135     Diabétologie, Nutrition, Maladies métaboliques Bar-le-Duc     C.H.                  JAN
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E13      Dpt De Cardiologie Et Maladies Cardio-Vasculaires             H.B.                  SADOUL
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E5       Endocrinologie Diabétologie et Nutrition                      H.B.                  GUERCI
+E230     Endocrinologie-Nutrition et Diabétologie Metz Mercy           C.H.R.                CREA
+E136     Endocrinologie-Nutrition et Diabétologie Thionville           Bel Air               CREA
+
+Nombre de poste : 150                                                                     Page: 5
+                                      choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E453     Evaluation et Information Médicales                                  S.J.                 JAY
+E17      Exploration de la Fonction Respiratoire et d'Aptitude à l'Exercice   H.B.                 CHENUEL
+E17      Exploration de la Fonction Respiratoire et d'Aptitude à l'Exercice   H.B.                 CHENUEL
+E72      Explorations Fonctionnelles Pédiatriques                             H.E.                 DEMOULIN-ALEXIKOVA
+E191     Gastro Entérologie Sarreguemines                                     C.H.                 ARDIZZONE
+E234     Généraliste 54 Azerailles (logement possible)                        Cabinet médical      BOURDIN
+E533     Généraliste 54 Baccarat 2                                            Cabinet médical      UBERSFELD
+E245     Généraliste 54 Bayon 1                                               Cabinet médical      THOMAS
+E439     Généraliste 54 Bayon 3                                               Cabinet médical      PETAT
+E545     Généraliste 54 Diarville 2                                           Cabinet médical      HUMBERT
+E475     Généraliste 54 Dieulouard                                            Cabinet médical      MOUROT-BOYON
+E436     Généraliste 54 Essey-les-Nancy 2                                     Cabinet médical      WEISSENBACHER
+E419     Généraliste 54 Jarville 1                                            Cabinet médical      MARCHAL
+E532     Généraliste 54 Leyr                                                  Cabinet médical      PAZZOGNA
+E28      Généraliste 54 Ludres 1                                              Cabinet médical      CORRIGER
+E228     Généraliste 54 Lunéville (logement possible)                         Cabinet médical      BERNARD
+E29      Généraliste 54 Lunéville 4                                           Cabinet médical      PELT
+E575     Généraliste 54 Lunéville 5                                           Cabinet médical      BERRIER
+E111     Généraliste 54 Nancy 12                                              Cabinet médical      FREY
+E474     Généraliste 54 Nancy 14                                              Cabinet médical      HELLUY
+E531     Généraliste 54 Nancy 17                                              Cabinet médical      PRUNIER
+E536     Généraliste 54 Nancy 18                                              Cabinet médical      THEBAULT
+E433     Généraliste 54 Pompey                                                Cabinet médical      FRANCOIS
+E544     Généraliste 54 Pont-à-Mousson 2                                      Cabinet médical      FLYE SAINTE MARIE
+E552     Généraliste 54 Pont-à-Mousson 3                                      Cabinet médical      TROESTER
+E110     Généraliste 54 Pulnoy 1                                              Cabinet médical      PRELOT-CLAUDON
+E596     Généraliste 54 Seichamps 3                                           Cabinet médical      COURTAULT
+E574     Généraliste 54 Toul 4                                                Cabinet médical      CHORT
+E561     Généraliste 54 Tucquegnieux                                          Cabinet médical      DESJEUNES
+E432     Généraliste 54 Varangéville                                          Cabinet médical      HINGRAY
+
+Nombre de poste : 180                                                                           Page: 6
+                                   choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E337     Généraliste 54 Villers lès Nancy 4                             Cabinet médical       ARDIZIO
+E211     Généraliste 55 Belleville / Meuse                              Cabinet médical       DEFAUX
+E414     Généraliste 55 Dombasle-en-Argonne 3                           Cabinet médical       KAISER
+E345     Généraliste 55 Marville (possibilité logement)                 Cabinet médical       DEFAUX
+E346     Généraliste 55 Revigny-sur-Ornain (logement possible)          Cabinet médical       BASTIDE-BLANDIN-BOUCHY-ROCHEBOUET-VALLET
+E602     Généraliste 55 Saint-Mihiel                                    Cabinet médical       HUMBERT H. et Collaborateurs
+E547     Généraliste 55 Thierville-sur-Meuse (logement possible)        Cabinet médical       ROYER
+E565     Généraliste 55 Vaucouleurs (logement possible)                 Cabinet médical       THILL
+E498     Généraliste 55 Void Vacon 3 (logement possible)                Cabinet médical       REMOT
+E350     Généraliste 57 Augny                                           Cabinet médical       LEUPOLD
+E595     Généraliste 57 Beuvange-sous-St Michel                         Cabinet médfical      BRAUER
+E354     Généraliste 57 Boulange                                        Cabinet médical       ATTARI
+E458     Généraliste 57 Boulay 1                                        Cabinet médical       BEYEL
+E356     Généraliste 57 Boulay 3                                        Cabinet médical       BIRGE
+E597     Généraliste 57 Boulay 4                                        Cabinet médical       GIRY
+E358     Généraliste 57 Dieuze (logement possible)                      Cabinet médical       PRZYCHOCKI
+E598     Généraliste 57 Ennery 2                                        Cabinet médical       GRASS
+E415     Généraliste 57 Metz 1                                          Cabinet médical       SCOMAZZON
+E604     Généraliste 57 Metz 11                                         Cabinet médical       DEITSCH
+E520     Généraliste 57 Metz 6                                          Cabinet médical       de OLIVEIRA
+E370     Généraliste 57 Rohrbach-lès-Bitche (logement possible)         Cabinet médical       ARCADE
+E372     Généraliste 57 Rozérieulles                                    Cabinet médical       GUILLAUMIN
+E537     Généraliste 57 Sarralbe                                        Cabinet médical       KOBIS
+E373     Généraliste 57 Sarrebourg (logement possible)                  Cabinet médical       DENEVERT
+E303     Généraliste 57 Sarreguemines 1                                 Cabinet médical       WISSLER-KOENIG
+E501     Généraliste 57 Sarreguemines 2                                 Cabinet médical       GALICHET COTOARBA
+E374     Généraliste 57 Stiring-Wendel                                  Cabinet médical       GILLE
+E529     Généraliste 57 Thionville 3                                    Cabinet médical       RAKOTOMAMONJY
+E592     Généraliste 57 Verny                                           Cabinet médical       HANRIOT
+E423     Généraliste 88 Anould                                          Cabinet médical       VERGIER
+
+Nombre de poste : 210                                                                      Page: 7
+                                    choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E582     Généraliste 88 Archettes 1                                      Cabinet médical       COUVAL-PATERNOTTE
+E422     Généraliste 88 Bulgnéville 2 (logement possible)                Cabinet médical       BATTAGLIA
+E548     Généraliste 88 Charmois l'Orgueilleux (logement possible)       Cabinet médical       BEIN
+E543     Généraliste 88 Dommartin-les-Remiremont 1 (logement possible)   Cabinet médical       SCHEER
+E586     Généraliste 88 Dommartin-les-Remiremont 2 (logement possible)   Cabinet médical       VAUTHIER
+E441     Généraliste 88 Epinal 1                                         Cabinet médical       LEROY
+E577     Généraliste 88 Epinal 10                                        Cabinet médical       PETITGENET
+E434     Généraliste 88 Epinal 2                                         Cabinet médical       DURUPT
+E564     Généraliste 88 Epinal 7                                         Cabinet médical       RAIDELET
+E576     Généraliste 88 Granges sur Vologne (logement possible)          Cabinet médical       BOIVIN
+E301     Généraliste 88 Le Val d'Ajol 3 (possibilité logement)           Cabinet médical       ZIMMERMANN
+E603     Généraliste 88 Les Forges                                       Cabinet médical       WAGNER
+E393     Généraliste 88 Mirecourt 1                                      Cabinet médical       EDGARD
+E460     Généraliste 88 Rambervillers 1 (logement possible)              Cabinet médical       GAUDIN
+E600     Généraliste 88 Raon l'Etape                                     Cabinet médical       WARY
+E259     Généraliste 88 Remiremont 1                                     Cabinet médical       PINOT
+E261     Généraliste 88 Remiremont 2                                     Cabinet médical       PIQUARD
+E402     Généraliste 88 Vicherey (logement possible)                     Cabinet médical       GERARD
+E558     Gynécologie médicale                                            Mat                   WERYHA
+E558     Gynécologie médicale                                            Mat                   WERYHA
+E243     Gynécologie Obstétrique Forbach                                 C.H.                  ROMAC
+E108     Gynécologie Obstétrique Metz                                    H.M.M.                WELTER Eric / SECONDE Aude
+E108     Gynécologie Obstétrique Metz                                    H.M.M.                WELTER Eric / SECONDE Aude
+E106     Gynécologie Obstétrique Remiremont                              C.H.                  BOUSSOUF
+E97      Gynécologie Obstétrique Sarreguemines                           C.H.                  SI HAMMANE
+E107     Gynécologie Obstétrique Thionville                              Bel Air               WELTER Eric / OLIERIC Marie-France
+E107     Gynécologie Obstétrique Thionville                              Bel Air               WELTER Eric / OLIERIC Marie-France
+E91      Gynécologie obstétrique Verdun                                  C.H.                  PANNEQUIN
+E95      Gynécologie-obstétrique - Maternité Briey                       C.H.R.                LEMARIE
+E31      Hématologie Biologique                                          H.B.                  DEVIGNES
+
+Nombre de poste : 240                                                                       Page: 8
+                                  choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E1       Hématologie et Médecine Interne                                       H.B.            FEUGIER
+E1       Hématologie et Médecine Interne                                       H.B.            FEUGIER
+E1       Hématologie et Médecine Interne                                       H.B.            FEUGIER
+E1       Hématologie et Médecine Interne                                       H.B.            FEUGIER
+E1       Hématologie et Médecine Interne                                       H.B.            FEUGIER
+E1       Hématologie et Médecine Interne                                       H.B.            FEUGIER
+E329     Hépato gastro-entérologie et médecine Thionville                      Bel Air         GILBERT
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E22      Hépato-Gastro-Entérologie                                             H.B.            BRONOWICKI
+E55      Imagerie Guilloz                                                      H.C.            BLUM
+E55      Imagerie Guilloz                                                      H.C.            BLUM
+E417     Imagerie médicale Sarreguemines                                       C.H.            LEVEQUE Christian / ZELLER Cyrille
+E126     Laboratoire de Génétique                                              H.B.            JONVEAUX
+E24      Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.            HOEN
+E24      Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.            HOEN
+E24      Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.            HOEN
+E24      Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.            HOEN
+E24      Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.            HOEN
+E24      Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.            HOEN
+E92      Maternité Mont-St-Martin                                              C.H.            STAMER
+E73      Médecine / court séjour gériatrique St-Charles                        St-Charles      LE BRUN
+E73      Médecine / court séjour gériatrique St-Charles                        St-Charles      LE BRUN
+E73      Médecine / court séjour gériatrique St-Charles                        St-Charles      LE BRUN
+E73      Médecine / court séjour gériatrique St-Charles                        St-Charles      LE BRUN
+E73      Médecine / court séjour gériatrique St-Charles                        St-Charles      LE BRUN
+
+Nombre de poste : 270                                                                       Page: 9
+                                  choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E2       Médecine B - Gériatrie                                        H.B.                  PERRET GUILLAUME
+E145     Médecine B à orientation pneumologique Saint-Dié              C.H.                  MARANGONI
+E193     Médecine B Hépato-Gastro-Entérologie Metz Mercy               C.H.R.                KULL
+E139     Médecine Gériatrique Aiguë Metz Mercy                         C.H.R.                BLETTNER
+E141     Médecine Gériatrique Saint-Dié                                C.H.                  RUSSO
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E46      Médecine Infantile                                            H.E.                  FEILLET
+E142     Médecine Interne et Hématologie Metz Mercy                    C.H.R.                DORVAUX Véronique
+E149     Médecine interne et Pneumologie Bar-le-Duc                    C.H.                  EVON
+E150     Médecine interne Sarrebourg                                   C.H.                  JOUIN
+E246     Médecine Légale                                               H.B.                  MARTRILLE
+E196     Médecine nucléaire Metz Mercy                                 C.H.R.                BEN MAHMOUD
+E253     Médecine orientation Cardiologie Metz Mercy                   C.H.R.                KHALIFÉ
+E253     Médecine orientation Cardiologie Metz Mercy                   C.H.R.                KHALIFÉ
+E208     Médecine physique - réadaptation Thionville                   Bel Air               MOUGET-GRANDPIERRE
+E30      Médecine physique et de réadaptation - Centre pour adultes    I.R.R.                PAYSANT
+E30      Médecine physique et de réadaptation - Centre pour adultes    I.R.R.                PAYSANT
+E30      Médecine physique et de réadaptation - Centre pour adultes    I.R.R.                PAYSANT
+
+Nombre de poste : 300                                                                     Page: 10
+                                 choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E30      Médecine physique et de réadaptation - Centre pour adultes   I.R.R.                PAYSANT
+E151     Médecine polyvalente et gériatrique Sarreguemines            C.H.                  BOCKEL
+E53      Néonatologie - Médecine et Réanimation Néonatale             Mat                   HASCOET
+E53      Néonatologie - Médecine et Réanimation Néonatale             Mat                   HASCOET
+E53      Néonatologie - Médecine et Réanimation Néonatale             Mat                   HASCOET
+E53      Néonatologie - Médecine et Réanimation Néonatale             Mat                   HASCOET
+E53      Néonatologie - Médecine et Réanimation Néonatale             Mat                   HASCOET
+E53      Néonatologie - Médecine et Réanimation Néonatale             Mat                   HASCOET
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E19      Néphrologie                                                  H.B.                  FRIMAT
+E310     Néphrologie Dialyse Metz Mercy                               C.H.R.                SAVENKOFF
+E408     Neurochirurgie pédiatrique                                   H.E.                  KLEIN
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E20      Neurologie                                                   H.C.                  DEBOUVERIE
+E200     Neurologie Epinal                                            C.H.                  HUTTIN
+E198     Neurologie Metz Mercy                                        C.H.R.                DUCROCQ
+E198     Neurologie Metz Mercy                                        C.H.R.                DUCROCQ
+
+Nombre de poste : 330                                                                    Page: 11
+                                   choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E65      Neuroradiologie Diagnostique et Thérapeutique                        H.C.            BRACARD
+E65      Neuroradiologie Diagnostique et Thérapeutique                        H.C.            BRACARD
+E59      O.R.L. Chirurgie Cervico Faciale                                     H.B.            JANKOWSKI
+E59      O.R.L. Chirurgie Cervico Faciale                                     H.B.            JANKOWSKI
+E59      O.R.L. Chirurgie Cervico Faciale                                     H.B.            JANKOWSKI
+E129     Onco-hémato-Pédiatrique                                              H.E.            CHASTAGNER
+E129     Onco-hémato-Pédiatrique                                              H.E.            CHASTAGNER
+E129     Onco-hémato-Pédiatrique                                              H.E.            CHASTAGNER
+E129     Onco-hémato-Pédiatrique                                              H.E.            CHASTAGNER
+E41      Oncologie Chirurgicale - Département de Chirurgie                    I.C.L.          DOLIVET
+E41      Oncologie Chirurgicale - Département de Chirurgie                    I.C.L.          DOLIVET
+E41      Oncologie Chirurgicale - Département de Chirurgie                    I.C.L.          DOLIVET
+E41      Oncologie Chirurgicale - Département de Chirurgie                    I.C.L.          DOLIVET
+E41      Oncologie Chirurgicale - Département de Chirurgie                    I.C.L.          DOLIVET
+E153     Oncologie médicale Metz Mercy                                        C.H.R.          LONGO
+E154     Oncologie médicale Thionville                                        Bel Air         AL AUKLA
+E201     Ophtalmologie - Site Mercy et Legouest Metz                          C.H.R.          PERONE
+E305     ORL et chirurgie cervico-faciale Metz Mercy                          C.H.R.          STRINGINI
+E168     Pédiatrie - Néonatologie Epinal                                      C.H.            AUBURTIN
+E164     Pédiatrie Briey                                                      C.H.R.          GRECO
+E247     Pédiatrie Metz Mercy                                                 C.H.R.          BILLAUD
+E247     Pédiatrie Metz Mercy                                                 C.H.R.          BILLAUD
+E224     Pédiatrie Néonatologie Forbach                                       C.H.            LEGAGNEUR
+E166     Pédiatrie Sarreguemines                                              C.H.            LOUNIS
+E167     Pédiatrie Thionville                                                 Bel Air         SCHNEIDER
+E252     Pneumologie Metz Mercy                                               C.H.R.          PAILLOT
+E206     Pneumologie Sarreguemines                                            C.H.            GRAMADA
+E203     Pneumologie Thionville                                               Bel Air         BOTRUS
+E83      Pôle 6 - Pôle Universitaire de Psychiatrie et Psychologie Clinique   C.P.N.          KAHN
+E83      Pôle 6 - Pôle Universitaire de Psychiatrie et Psychologie Clinique   C.P.N.          KAHN
+
+Nombre de poste : 360                                                                      Page: 12
+                                  choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E56      Pôle de la Femme                                                          Mat         MOREL
+E56      Pôle de la Femme                                                          Mat         MOREL
+E56      Pôle de la Femme                                                          Mat         MOREL
+E56      Pôle de la Femme                                                          Mat         MOREL
+E56      Pôle de la Femme                                                          Mat         MOREL
+E56      Pôle de la Femme                                                          Mat         MOREL
+E56      Pôle de la Femme                                                          Mat         MOREL
+E186     Pôle de Médecine - Unité de Cardiologie Neufchâteau                       C.H.        THUUS
+E143     Pôle de Médecine Site de Neufchâteau                                      C.H.        DOUART Patrick
+E82      Pôle du Grand Nancy                                                       C.P.N.      SCHWAN
+E82      Pôle du Grand Nancy                                                       C.P.N.      SCHWAN
+E82      Pôle du Grand Nancy                                                       C.P.N.      SCHWAN
+E82      Pôle du Grand Nancy                                                       C.P.N.      SCHWAN
+E51      Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent   H.E.        KABUTH
+E51      Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent   H.E.        KABUTH
+E51      Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent   H.E.        KABUTH
+E96      Pôle Mère Enfant Site de Neufchâteau                                      C.H.        OPREA
+E125     Psychiatrie Infanto-juvénile n° 2 Lunéville - CMP La Madeleine            C.P.N.      SAAD SAINT GILLES Stéphanie / GROSS M-J
+E64      Radiologie adultes                                                        H.B.        CROISE-LAURENT
+E64      Radiologie adultes                                                        H.B.        CROISE-LAURENT
+E64      Radiologie adultes                                                        H.B.        CROISE-LAURENT
+E63      Radiologie enfants                                                        H.E.        CROISE-LAURENT
+E63      Radiologie enfants                                                        H.E.        CROISE-LAURENT
+E21      Réanimation Médicale Brabois                                              H.B.        LEVY
+E21      Réanimation Médicale Brabois                                              H.B.        LEVY
+E21      Réanimation Médicale Brabois                                              H.B.        LEVY
+E21      Réanimation Médicale Brabois                                              H.B.        LEVY
+E21      Réanimation Médicale Brabois                                              H.B.        LEVY
+E25      Réanimation Médicale Central                                              H.C.        BOLLAERT
+E25      Réanimation Médicale Central                                              H.C.        BOLLAERT
+
+Nombre de poste : 390                                                                       Page: 13
+                                  choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E25      Réanimation Médicale Central                                            H.C.        BOLLAERT
+E25      Réanimation Médicale Central                                            H.C.        BOLLAERT
+E25      Réanimation Médicale Central                                            H.C.        BOLLAERT
+E313     Réanimation Metz Mercy (non logé)                                       C.H.R.      GETTE
+E313     Réanimation Metz Mercy (non logé)                                       C.H.R.      GETTE
+E100     Réanimation Pédiatrique Spécialisée                                     H.E.        BOUSSARD
+E23      Rhumatologie                                                            H.B.        CHARY-VALCKENAERE
+E23      Rhumatologie                                                            H.B.        CHARY-VALCKENAERE
+E23      Rhumatologie                                                            H.B.        CHARY-VALCKENAERE
+E23      Rhumatologie                                                            H.B.        CHARY-VALCKENAERE
+E75      SAMU-SMUR                                                               H.C.        NACE
+E317     SAU-UHCD Verdun (logé ?)                                                C.H.        BAUGNON
+E169     Service de Pédopsychiatrie - CMP infanto-juvénile Briey                 C.H.R.      BERTEL
+E457     Service Interdisciplinaire de Soins Oncologiques de Support - Douleur   I.C.L.      ROUSSELOT
+E99      Structure d'Urgences Pédiatriques (POSU-SUP)                            H.E.        BORSA-DORION
+E99      Structure d'Urgences Pédiatriques (POSU-SUP)                            H.E.        BORSA-DORION
+E99      Structure d'Urgences Pédiatriques (POSU-SUP)                            H.E.        BORSA-DORION
+E99      Structure d'Urgences Pédiatriques (POSU-SUP)                            H.E.        BORSA-DORION
+E88      Unité d'Hospitalisation Sécurisée Interrégionale                        H.B.        PETON
+E128     Unité de Médecine vasculaire                                            H.B.        WAHL
+E289     Unité de Post-Urgences Polyvalente (UPUP)                               H.C.        VALANCE
+E289     Unité de Post-Urgences Polyvalente (UPUP)                               H.C.        VALANCE
+E289     Unité de Post-Urgences Polyvalente (UPUP)                               H.C.        VALANCE
+E8       Unité de Soins de Longue Durée (USLD)                                   S.J.        MANCIAUX
+E8       Unité de Soins de Longue Durée (USLD)                                   S.J.        MANCIAUX
+E130     Unité de Transplantation Médullaire                                     H.E.        FEUGIER
+E130     Unité de Transplantation Médullaire                                     H.E.        FEUGIER
+E163     Urgences - SMUR - ZSTCD Toul                                            C.H.        DACCORDI
+E162     Urgences SMUR UPATOU Site de Neufchâteau                                C.H.        DOUART-LÉGER
+E491     Urgences SOS Santé Saint-Avold                                          C.H.        HAOUCHINE
+
+Nombre de poste : 420                                                                     Page: 14
+                        choix de postes DFASM1 vendredi 7/12 - 9h amphi 600 A
+
+E44      Urologie                                            H.B.                  HUBERT
+E44      Urologie                                            H.B.                  HUBERT
+E44      Urologie                                            H.B.                  HUBERT
+E44      Urologie                                            H.B.                  HUBERT
+E44      Urologie                                            H.B.                  HUBERT
+
+Nombre de poste : 425                                                           Page: 15
+
