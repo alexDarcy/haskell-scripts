@@ -72,6 +72,7 @@ data Stage = Stage {id :: T.Text
 
 ---
 line1 = "E190     2° service et UMD C.H.S. Sarreguemines                               C.H.S.            MATEI"
+line2 = "E312     Accueil - urgences Epinal                                            C.H.             HOMEL"
 
 --E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
 parseID :: Parser T.Text
@@ -80,25 +81,30 @@ parseID  = do
   id2 <- many decimal
   return $ T.concat (T.singleton id1 : map (T.pack . show) id2)
 
+isPlace = choice $ map string l
+  where l = map (\x -> T.append (T.pack x) (T.pack "  ")) ["C.H.", "C.H.S."]
+
 -- Structure :
 -- ID NAME PLACE BOSS
 -- ID = a letter followed by 3 digits
 -- name = a set of characters up to a place
 -- place = search into a list of places *and* 2 spaces after (importsant !)
 -- boss = everything else
+parseAhead :: Parser Stage
 parseAhead = do
   id <- parseID
   space *> many1 space
   -- spaces are important
-  s1 <- manyTill anyChar (lookAhead (string "C.H.S.  "))
-  let s1' = T.strip . T.pack $ s1
+  s <- manyTill anyChar (lookAhead (isPlace))
+  let s' = T.strip . T.pack $ s
+  place <- isPlace
   space *> many1 space
---  s2 <- manyTill anyChar endOfLine
-  return $ Stage id  s1' "" ""
+  boss <- many letter
+  return $ Stage id  s' place (T.pack boss)
 
-line2 = "E190 lol.test C.H.S"
-runTest = parseOnly parseAhead line1
+parserStage = many $ parseAhead <* endOfLine
 
+runTest = parseOnly parserStage $ T.unlines [line1, line2]
 
 main = do
   print "coucou"
