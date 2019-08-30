@@ -21,10 +21,10 @@ import qualified Data.Text.IO as TIO
 import qualified Data.Text as T
 import Data.List as L
 
-data Stage = Stage {id :: String
-  , unit :: String
-  , place :: String
-  , boss :: String }
+data Stage = Stage {id :: T.Text
+  , unit :: T.Text
+  , place :: T.Text
+  , boss :: T.Text}
   deriving (Show)
 
 -- instance Show Stage where
@@ -74,27 +74,31 @@ data Stage = Stage {id :: String
 line1 = "E190     2° service et UMD C.H.S. Sarreguemines                               C.H.S.            MATEI"
 
 --E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
-
-parseID :: Parser String
+parseID :: Parser T.Text
 parseID  = do
   id1 <- letter
   id2 <- many decimal
-  return $ id1 : (concatMap show $ id2)
+  return $ T.concat (T.singleton id1 : map (T.pack . show) id2)
 
-parseStage = do
+-- Structure :
+-- ID NAME PLACE BOSS
+-- ID = a letter followed by 3 digits
+-- name = a set of characters up to a place
+-- place = search into a list of places *and* 2 spaces after (importsant !)
+-- boss = everything else
+parseAhead = do
   id <- parseID
-  space
-  s1 <- many letter -- (satisfy isLetter)
-  space
-  s2 <-  string "C.H.S"
-  return $ Stage id s1 (T.unpack s2) ""
+  space *> many1 space
+  -- spaces are important
+  s1 <- manyTill anyChar (lookAhead (string "C.H.S.  "))
+  let s1' = T.strip . T.pack $ s1
+  space *> many1 space
+--  s2 <- manyTill anyChar endOfLine
+  return $ Stage id  s1' "" ""
 
-testLook = do
-  lol <- manyTill (lookAhead $ string "C.H.S")
-  return lol
- 
 line2 = "E190 lol.test C.H.S"
-runTest = parseOnly testLook line2
+runTest = parseOnly parseAhead line1
+
 
 main = do
   print "coucou"
