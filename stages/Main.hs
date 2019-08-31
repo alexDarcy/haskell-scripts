@@ -39,8 +39,9 @@ countIdentical :: [Job] -> [(Job, Int)]
 countIdentical x = map (\l -> (head l, length l)) (L.group . L.sort $ x)
 
 -- Print a Job with padding and the number of occurences
+-- Compatible with uniq output
 printEntry :: (Job, Int) -> T.Text
-printEntry (x, y) = T.pack $ printf "%-60s %d" (unit x) y
+printEntry (x, y) = T.pack $ printf "%7d %s" y (unit x)
 
 --E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
 parseID :: Parser T.Text
@@ -95,13 +96,13 @@ parseJob = do
   place <- isPlace
   space *> many1 space
   boss <- many1 letter
-  return $ Job id  s' place (T.pack boss)
+  return $ Job id  s' place (T.strip . T.pack $ boss)
 
 -- parseJobs = many $ parseJob <* endOfLine
 -- runTest = parseOnly parseJobs $ T.unlines [line1, line2]
 
 main = do
-  file <- TIO.readFile "small.txt"
+  file <- TIO.readFile "test.txt"
   -- let all = fromRight [] (parseOnly parseJobs file)
   -- Try to read a job by each line
   let all = map (parseOnly parseJob) $ T.lines file
