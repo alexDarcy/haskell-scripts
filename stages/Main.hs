@@ -17,6 +17,7 @@ import Data.Attoparsec.Combinator
 import qualified Data.Text.IO as TIO
 import qualified Data.Text as T
 import Data.List as L
+import Text.Printf
 
 data Job = Job {id :: T.Text
   , unit :: T.Text
@@ -37,12 +38,9 @@ instance Ord Job where
 countIdentical :: [Job] -> [(Job, Int)]
 countIdentical x = map (\l -> (head l, length l)) (L.group . L.sort $ x)
 
+-- Print a Job with padding and the number of occurences
 printEntry :: (Job, Int) -> T.Text
-printEntry (x, y) = T.concat [ unit x,  "            ", T.pack (show y)]
-
----
-line1 = "E190     2° service et UMD C.H.S. Sarreguemines                               C.H.S.            MATEI"
-line2 = "E312     Accueil - urgences Epinal                                            C.H.             HOMEL"
+printEntry (x, y) = T.pack $ printf "%-60s %d" (unit x) y
 
 --E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
 parseID :: Parser T.Text
