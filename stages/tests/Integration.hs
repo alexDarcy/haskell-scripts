@@ -21,8 +21,13 @@ main = hspec $ do
       getAllJobs twoLines `shouldBe` [Job "E666" "CardiologieBidon" "H.C." "XXX"]
 
   describe "Full tests" $ do
-    it "A1Trimestre3" $ do
+    it "A1Trimestre2" $ do
       output <- parseData "tests/postesa1trimestre2.txt"
-      TIO.writeFile "output.csv" output
       ref <- TIO.readFile "tests/postesa1trimestre2_ref.txt"
+      ref == output `shouldBe` True
+
+    it "A1Trimestre3" $ do
+      output <- parseData "tests/postesa1trimestre3.txt"
+      TIO.writeFile "output.csv" output
+      ref <- TIO.readFile "tests/postesa1trimestre3_ref.txt"
       ref == output `shouldBe` True

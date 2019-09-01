@@ -31,8 +31,8 @@
       2 Chirurgie Infantile Orthopédique
       1 Chirurgie Infantile Viscérale
       2 Chirurgie Maxillo Faciale, Chirurgie Plastique Reconstructrice
+      7 Chirurgie Orthopédique et Traumatologique
       1 Chirurgie Orthopédique et Traumatologique - Chirurgie B Metz Mercy
-      7 Chirurgie Orthopédique et Traumatologique C.C.E.G.
       3 Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA)
       2 Chirurgie Thoracique
       1 Chirurgie Urologique Thionville
@@ -157,7 +157,7 @@
       1 Laboratoire de Génétique
       7 Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD
       1 Maternité Mont-St-Martin
-      5 Médecine / court séjour gériatrique St-Charles
+      5 Médecine / court séjour gériatrique
       7 Médecine B - Gériatrie
       1 Médecine B Hépato-Gastro-Entérologie Metz Mercy
       1 Médecine B à orientation pneumologique Saint-Dié
