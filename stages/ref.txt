@@ -221,8 +221,7 @@
       1 Unité de Médecine vasculaire
       3 Unité de Post-Urgences Polyvalente (UPUP)
       2 Unité de Soins de Longue Durée (USLD)
-      1 Unité de Transplantation Médullaire
-      1 Unité de Transplantation Médullaire
+      2 Unité de Transplantation Médullaire
       1 Urgences - SMUR - ZSTCD Toul
       1 Urgences SMUR UPATOU Site de Neufchâteau
       1 Urgences SOS Santé Saint-Avold
