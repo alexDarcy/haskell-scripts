@@ -1,0 +1,223 @@
+2° service et UMD C.H.S. Sarreguemines,1
+Accueil - urgences Epinal,1
+Accueil des Urgences,7
+Accueil des Urgences - S.A.M.U. - S.M.U.R. Metz Mercy (non logé),3
+Accueil des Urgences Forbach,1
+Accueil des Urgences SMUR/UHCD Thionville (non logé),2
+Accueil et Réception des Urgences Sarreguemines,1
+Accueil urgences - SMUR - UHCD Mont-Saint-Martin,1
+Accueil-Urgences - SMUR Sarrebourg,1
+Anatomie Pathologique Brabois,1
+Anatomie Pathologique Central,1
+Anesthésie COTA / CGU (+ Maternité),2
+Anesthésie Réanimation Chirurgicale Central,3
+Anesthésie-Réanimation Chirurgicale Brabois,3
+CIC 1433 Epidémiologie clinique (stage recherche),1
+CIC en cardiologie INSERM (stage recherche),1
+CIC en imagerie médicale - INSERM 1433 (stage recherche),1
+Cardiologie Epinal,1
+Cardiologie Saint-Dié,1
+Cardiologie Sarrebourg,1
+Cardiologie Thionville,1
+Cardiologie générale et réadaptation CV - Médecine polyvalente Hayange,1
+Centre Antipoison et de Toxico-vigilance,1
+Centre Paul Spilmann : Soins de Suite Réadaption Gériatrique,1
+Centre régional de pharmacovigilance de Lorraine,1
+Chirurgie A (viscérale) Briey,1
+Chirurgie B (viscérale) Saint-Dié,1
+Chirurgie Cardiaque Vasculaire et Transplantation,5
+Chirurgie Digestive et Générale,7
+Chirurgie Générale Et Urgences (CGU) et UMCO (obésité) site Brabois,3
+Chirurgie Infantile Orthopédique,2
+Chirurgie Infantile Viscérale,1
+Chirurgie Maxillo Faciale, Chirurgie Plastique Reconstructrice,2
+Chirurgie Orthopédique et Traumatologique - Chirurgie B Metz Mercy,1
+Chirurgie Orthopédique et Traumatologique C.C.E.G.,8
+Chirurgie Orthopédique, Traumatologique et Arthroscopique - (COTA) H.C.,4
+Chirurgie Thoracique,2
+Chirurgie Urologique Thionville,1
+Chirurgie Vasculaire,4
+Chirurgie de la Main,6
+Chirurgie générale et digestive Sarreguemines,1
+Chirurgie orthopédique et traumatologique Saint-Dié,1
+Chirurgie plastique reconstructive et maxillo-faciale Metz Mercy,1
+Chirurgie thoracique et cardio vasculaire Metz Mercy,1
+Chirurgie viscérale et urologique Lunéville,1
+Court Séjour, SSR, HJ Gériatrique Thionville,1
+Dermatologie - Ce GIDD Thionville,1
+Diabétologie SOS Santé Saint-Avold,1
+Diabétologie, Nutrition, Maladies métaboliques Bar-le-Duc,1
+Dpt De Cardiologie Et Maladies Cardio-Vasculaires,10
+Département d'Oncologie Médicale - Unité A,6
+Département d'Ophtalmologie,3
+Département de Dermatologie et Allergologie,4
+Département de Médecine Interne et Immunologie Clinique,5
+Département de Neurochirurgie,5
+Département de Pneumologie,8
+Département de Radiothérapie,2
+Endocrinologie Diabétologie et Nutrition,9
+Endocrinologie-Nutrition et Diabétologie Metz Mercy,1
+Endocrinologie-Nutrition et Diabétologie Thionville,1
+Evaluation et Information Médicales,1
+Exploration de la Fonction Respiratoire et d'Aptitude à l'Exercice,2
+Explorations Fonctionnelles Pédiatriques,1
+Gastro Entérologie Sarreguemines,1
+Gynécologie Obstétrique Forbach,1
+Gynécologie Obstétrique Metz,2
+Gynécologie Obstétrique Remiremont,1
+Gynécologie Obstétrique Sarreguemines,1
+Gynécologie Obstétrique Thionville,2
+Gynécologie médicale,2
+Gynécologie obstétrique Verdun,1
+Gynécologie-obstétrique - Maternité Briey,1
+Généraliste 54 Azerailles (logement possible),1
+Généraliste 54 Baccarat 2,1
+Généraliste 54 Bayon 1,1
+Généraliste 54 Bayon 3,1
+Généraliste 54 Diarville 2,1
+Généraliste 54 Dieulouard,1
+Généraliste 54 Essey-les-Nancy 2,1
+Généraliste 54 Jarville 1,1
+Généraliste 54 Leyr,1
+Généraliste 54 Ludres 1,1
+Généraliste 54 Lunéville (logement possible),1
+Généraliste 54 Lunéville 4,1
+Généraliste 54 Lunéville 5,1
+Généraliste 54 Nancy 12,1
+Généraliste 54 Nancy 14,1
+Généraliste 54 Nancy 17,1
+Généraliste 54 Nancy 18,1
+Généraliste 54 Pompey,1
+Généraliste 54 Pont-à-Mousson 2,1
+Généraliste 54 Pont-à-Mousson 3,1
+Généraliste 54 Pulnoy 1,1
+Généraliste 54 Seichamps 3,1
+Généraliste 54 Toul 4,1
+Généraliste 54 Tucquegnieux,1
+Généraliste 54 Varangéville,1
+Généraliste 54 Villers lès Nancy 4,1
+Généraliste 55 Belleville / Meuse,1
+Généraliste 55 Dombasle-en-Argonne 3,1
+Généraliste 55 Marville (possibilité logement),1
+Généraliste 55 Revigny-sur-Ornain (logement possible),1
+Généraliste 55 Saint-Mihiel,1
+Généraliste 55 Thierville-sur-Meuse (logement possible),1
+Généraliste 55 Vaucouleurs (logement possible),1
+Généraliste 55 Void Vacon 3 (logement possible),1
+Généraliste 57 Augny,1
+Généraliste 57 Beuvange-sous-St Michel,1
+Généraliste 57 Boulange,1
+Généraliste 57 Boulay 1,1
+Généraliste 57 Boulay 3,1
+Généraliste 57 Boulay 4,1
+Généraliste 57 Dieuze (logement possible),1
+Généraliste 57 Ennery 2,1
+Généraliste 57 Metz 1,1
+Généraliste 57 Metz 11,1
+Généraliste 57 Metz 6,1
+Généraliste 57 Rohrbach-lès-Bitche (logement possible),1
+Généraliste 57 Rozérieulles,1
+Généraliste 57 Sarralbe,1
+Généraliste 57 Sarrebourg (logement possible),1
+Généraliste 57 Sarreguemines 1,1
+Généraliste 57 Sarreguemines 2,1
+Généraliste 57 Stiring-Wendel,1
+Généraliste 57 Thionville 3,1
+Généraliste 57 Verny,1
+Généraliste 88 Anould,1
+Généraliste 88 Archettes 1,1
+Généraliste 88 Bulgnéville 2 (logement possible),1
+Généraliste 88 Charmois l'Orgueilleux (logement possible),1
+Généraliste 88 Dommartin-les-Remiremont 1 (logement possible),1
+Généraliste 88 Dommartin-les-Remiremont 2 (logement possible),1
+Généraliste 88 Epinal 1,1
+Généraliste 88 Epinal 10,1
+Généraliste 88 Epinal 2,1
+Généraliste 88 Epinal 7,1
+Généraliste 88 Granges sur Vologne (logement possible),1
+Généraliste 88 Le Val d'Ajol 3 (possibilité logement),1
+Généraliste 88 Les Forges,1
+Généraliste 88 Mirecourt 1,1
+Généraliste 88 Rambervillers 1 (logement possible),1
+Généraliste 88 Raon l'Etape,1
+Généraliste 88 Remiremont 1,1
+Généraliste 88 Remiremont 2,1
+Généraliste 88 Vicherey (logement possible),1
+Hématologie Biologique,1
+Hématologie et Médecine Interne,6
+Hépato gastro-entérologie et médecine Thionville,1
+Hépato-Gastro-Entérologie,7
+Imagerie Guilloz,2
+Imagerie médicale Sarreguemines,1
+Laboratoire de Génétique,1
+Maladies Infectieuses et Tropicales / Centre de Vaccination / Ce GIDD H.B.,6
+Maternité Mont-St-Martin,1
+Médecine / court séjour gériatrique St-Charles,5
+Médecine B - Gériatrie,7
+Médecine B Hépato-Gastro-Entérologie Metz Mercy,1
+Médecine B à orientation pneumologique Saint-Dié,1
+Médecine Gériatrique Aiguë Metz Mercy,1
+Médecine Gériatrique Saint-Dié,1
+Médecine Infantile,8
+Médecine Interne et Hématologie Metz Mercy,1
+Médecine Légale,1
+Médecine interne Sarrebourg,1
+Médecine interne et Pneumologie Bar-le-Duc,1
+Médecine nucléaire Metz Mercy,1
+Médecine orientation Cardiologie Metz Mercy,2
+Médecine physique - réadaptation Thionville,1
+Médecine physique et de réadaptation - Centre pour adultes,4
+Médecine polyvalente et gériatrique Sarreguemines,1
+Neurochirurgie pédiatrique,1
+Neurologie,10
+Neurologie Epinal,1
+Neurologie Metz Mercy,2
+Neuroradiologie Diagnostique et Thérapeutique,2
+Néonatologie - Médecine et Réanimation Néonatale,6
+Néphrologie,7
+Néphrologie Dialyse Metz Mercy,1
+O.R.L. Chirurgie Cervico Faciale,3
+ORL et chirurgie cervico-faciale Metz Mercy,1
+Onco-hémato-Pédiatrique,4
+Oncologie Chirurgicale - Département de Chirurgie,5
+Oncologie médicale Metz Mercy,1
+Oncologie médicale Thionville,1
+Ophtalmologie - Site Mercy et Legouest Metz,1
+Pneumologie Metz Mercy,1
+Pneumologie Sarreguemines,1
+Pneumologie Thionville,1
+Psychiatrie Infanto-juvénile n° 2 Lunéville - CMP La Madeleine,1
+Pédiatrie - Néonatologie Epinal,1
+Pédiatrie Briey,1
+Pédiatrie Metz Mercy,2
+Pédiatrie Néonatologie Forbach,1
+Pédiatrie Sarreguemines,1
+Pédiatrie Thionville,1
+Pôle 6 - Pôle Universitaire de Psychiatrie et Psychologie Clinique,2
+Pôle Infanto-juvénile n° 4 - psychiatrie de l'enfant et de l'adolescent,3
+Pôle Mère Enfant Site de Neufchâteau,1
+Pôle de Médecine - Unité de Cardiologie Neufchâteau,1
+Pôle de Médecine Site de Neufchâteau,1
+Pôle de la Femme,7
+Pôle du Grand Nancy,4
+Radiologie adultes,3
+Radiologie enfants,2
+Rhumatologie,4
+Réanimation Metz Mercy (non logé),2
+Réanimation Médicale Brabois,5
+Réanimation Médicale Central,5
+Réanimation Pédiatrique Spécialisée,1
+SAMU-SMUR,1
+SAU-UHCD Verdun (logé ?),1
+Service Interdisciplinaire de Soins Oncologiques de Support - Douleur,1
+Service de Pédopsychiatrie - CMP infanto-juvénile Briey,1
+Structure d'Urgences Pédiatriques (POSU-SUP),4
+Unité d'Hospitalisation Sécurisée Interrégionale,1
+Unité de Médecine vasculaire,1
+Unité de Post-Urgences Polyvalente (UPUP),3
+Unité de Soins de Longue Durée (USLD),2
+Unité de Transplantation Médullaire,2
+Urgences - SMUR - ZSTCD Toul,1
+Urgences SMUR UPATOU Site de Neufchâteau,1
+Urgences SOS Santé Saint-Avold,1
+Urologie,5

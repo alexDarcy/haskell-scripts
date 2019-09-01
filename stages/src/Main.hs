@@ -4,7 +4,6 @@
 module Main where
 
 import JobParser
-
 import qualified Data.Text.IO as TIO
 
 main = do

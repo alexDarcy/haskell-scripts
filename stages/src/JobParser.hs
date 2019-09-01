@@ -53,6 +53,7 @@ listPlaces = ["C.C.E.G."
              , "C.H.S."
              , "C.P.N."
              , "Cabinet médical"
+             , "Cabinet médfical"      -- yes....
              , "Bel Air"
              , "H.B."
              , "H.C."
