@@ -1,0 +1,36 @@
+name:           stages
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/stages#readme>
+homepage:       https://github.com/githubuser/stages#readme
+bug-reports:    https://github.com/githubuser/stages/issues
+author:         Alexis Praga
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+
+dependencies:
+- attoparsec
+- base >=4.7 && <5
+- text
+- bytestring
+
+library:
+  source-dirs: src
+
+executables:
+  stages-exe:
+    main: Main.hs
+    source-dirs: src
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
+
+tests:
+  integration-test:
+    main: Integration.hs
+    source-dirs: tests/
+    dependencies:
+      - hspec
+      - QuickCheck
+      - stages

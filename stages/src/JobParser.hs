@@ -1,15 +1,14 @@
-{-# LANGUAGE OverloadedStrings #-}
--- Example of a parser with attoparsec
+-- | Attoparsec example
 -- Data is created from a pdf with : pdftotex -layout
---
+-- After reading the data, we count identical entries
+
 -- Structure :
 -- ID NAME PLACE BOSS
 -- ID = a letter followed by 3 digits
 -- name = a set of characters up to a place
 -- place = search into a list of places *and* 2 spaces after (importsant !)
 -- boss = everything else
-module Main where
-
+module JobParser where
 
 import Control.Applicative
 import Data.Either
@@ -26,9 +25,6 @@ data Job = Job {id :: T.Text
   , boss :: T.Text}
   deriving (Show)
 
--- instance Show Job where
---   show (Job i u p b) = show u
-
 instance Eq Job where
   (==) (Job _ u _ _) (Job _ u' _ _) = u == u'
 
@@ -44,7 +40,6 @@ countIdentical x = map (\l -> (head l, length l)) (L.group . L.sort $ x)
 printEntry :: (Job, Int) -> T.Text
 printEntry (x, y) = T.pack $ printf "%7d %s" y (unit x)
 
---E312     Accueil - urgences Epinal                                            C.H.              LEMAU DE TALANCÉ
 parseID :: Parser T.Text
 parseID  = do
   id1 <- letter
@@ -73,21 +68,17 @@ listPlaces = ["C.C.E.G."
 isPlace = choice $ map string l
   where l = map (\x -> T.append (T.pack x) (T.pack "  ")) listPlaces
 
-
-
 parseJob :: Parser Job
 parseJob = do
   id <- parseID
   space *> many1 space
   -- spaces are important
-  s <- manyTill anyChar (lookAhead (isPlace))
+  s <- manyTill anyChar (lookAhead isPlace)
   let s' = T.strip . T.pack $ s
   place <- isPlace
   space *> many1 space
   boss <- many1 letter
   return $ Job id  s' place (T.strip . T.pack $ boss)
-
-testLines = manyTill anyChar (lookAhead (string "C.H."))
 
 -- If a line is not a job (i.e reading a Job fails), this allows us to continue
 skipTill :: (Alternative f) => f a -> f b -> f b
@@ -99,21 +90,14 @@ skipLine = takeTill isEndOfLine <* endOfLine
 
 -- We cannot read line by line as some Jobs are multi-line.....
 parseAllJobs = many (skipLine `skipTill` parseJob)
---
-line1 = T.unlines $ ["E185     Cardiologie générale et réadaptation CV - Médecine polyvalente Hayange"
-                    ,"                                                                            C.H.R.           KHALIFÉ"
-                    ]
-runTest = parseOnly parseJob line1
 
-readData = TIO.readFile "test.txt"
+getAllJobs :: T.Text -> [Job]
+getAllJobs = fromRight [] . (parseOnly parseAllJobs)
 
-main = do
-  file <- readData
-  -- We cannot read line by line as some Jobs are multi-line.....
-  let all = fromRight [] $ (parseOnly parseAllJobs file)
-  -- print all
+parseData f = do
+  file <- TIO.readFile f
+-- We cannot read line by line as some Jobs are multi-line.....
+  let all = fromRight [] $ parseOnly parseAllJobs file
   -- Count identical entries
   let output =  map printEntry $ countIdentical all
-  -- -- let output' = T.unlines $ T.pack "service;nbpostes" : output
-  -- print output
-  TIO.writeFile "output.csv" $ T.unlines output
+  return $ T.unlines output
