@@ -7,11 +7,13 @@ import Control.Exception (evaluate)
 import JobParser
 
 import Data.Text as T
+import Data.List as L
 import qualified Data.Text.IO as TIO
 
 singleLine = T.pack "E8       Unité de Soins de Longue Durée (USLD)                                   S.J.        MANCIAUX"
 twoLines = T.pack "E666       CardiologieBidon             \n              H.C.        XXX"
 
+reSort =  T.unlines . L.sort . T.lines
 main :: IO ()
 main = hspec $ do
   describe "Small tests" $ do
@@ -31,3 +33,11 @@ main = hspec $ do
       TIO.writeFile "output.csv" output
       ref <- TIO.readFile "tests/postesa1trimestre3_ref.txt"
       ref == output `shouldBe` True
+
+    it "A2Trimestre1" $ do
+      output <- parseData "tests/postesa2trimestre2.txt"
+      TIO.writeFile "output.csv" output
+      ref <- TIO.readFile "tests/postesa2trimestre2_ref.txt"
+      let ref_sorted = reSort ref
+      let output_sorted = reSort output
+      ref_sorted == output_sorted `shouldBe` True

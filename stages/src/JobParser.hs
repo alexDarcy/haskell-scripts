@@ -54,6 +54,10 @@ listPlaces = ["C.C.E.G."
              , "C.P.N."
              , "Cabinet médical"
              , "Cabinet médfical"      -- yes....
+             , "cabinet médical"
+             , "Cabinetmédical"
+             , "cabinetmédical"
+             , "Jury" -- Hack : pole 6 do not have a place
              , "Bel Air"
              , "H.B."
              , "H.C."
@@ -78,7 +82,7 @@ parseJob = do
   let s' = T.strip . T.pack $ s
   place <- isPlace
   space *> many1 space
-  boss <- many1 letter
+  boss <- many1 (letter <|> char '?')
   return $ Job id  s' place (T.strip . T.pack $ boss)
 
 -- If a line is not a job (i.e reading a Job fails), this allows us to continue
