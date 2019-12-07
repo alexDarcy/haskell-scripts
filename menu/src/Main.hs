@@ -5,21 +5,52 @@ import System.Random
 import Data.List
 
 data AnimalProteins = Beef | Chicken | Fish
-data Legumes = WhiteBeans | RedBeans | Lentils | Chickpeas
+data Legumes = WhiteBeans | RedBeans | Lentils | PinkLentils | Chickpeas
+data Vegetables = Beetroots | BrusselsSprouts | Cabbage | Carrots | Cauliflower | GreenBeans | Leeks | Peas | Rutabaga | Spinach | Turnips
+data Carbs = Pasta | Rice | BrownRice | WholePasta | Potatoes | SweetPotatoes
 
-data Proteins = AnimalProteins | Legumes deriving (Show)
-data Menu = Menu Proteins  deriving (Show)
+data Proteins = AP AnimalProteins | Leg Legumes
+data Menu = Menu Proteins Vegetables Carbs
 
+instance Show Proteins where
+    show (AP p) = show p
+    show (Leg l) = show l
+
+instance Show Menu where
+    show (Menu p v c) = show p ++ ", " ++ show v ++ ", " ++ show c
+   
 instance Show AnimalProteins where
     show Beef = "boeuf"
     show Chicken = "poulet"
     show Fish = "poisson"
 
 instance Show Legumes where
-    show WhiteBeans = "haricots blancs"
-    show RedBeans = "haricots rouges"
-    show Lentils = "lentilles"
     show Chickpeas = "pois chiches"
+    show Lentils = "lentilles"
+    show PinkLentils = "lentilles corail"
+    show RedBeans = "haricots rouges"
+    show WhiteBeans = "haricots blancs"
+
+instance Show Vegetables where
+    show Beetroots = "betteraves"
+    show BrusselsSprouts = "choux de bruxelles"
+    show Cabbage = "chou"
+    show Carrots = "carottes"
+    show Cauliflower = "chou-fleur"
+    show GreenBeans = "haricots verts"
+    show Leeks = "poireaux"
+    show Peas = "petits pois"
+    show Rutabaga = "rutabaga"
+    show Spinach = "épinards"
+    show Turnips = "navets"
+
+instance Show Carbs where
+    show Pasta= "pâtes"
+    show Rice= "riz"
+    show BrownRice= "riz complet"
+    show WholePasta= "pâtes complètes"
+    show Potatoes= "pommes de terre"
+    show SweetPotatoes= "patates douces"
 
 rAnimalProteins :: Gen AnimalProteins
 rAnimalProteins = elements [Beef , Chicken , Fish]
@@ -28,42 +59,37 @@ rLegumes :: Gen Legumes
 rLegumes = elements [WhiteBeans , RedBeans , Lentils , Chickpeas]
 
 rProteins :: Gen Proteins
-rProteins = choose (rLegumes, rAnimalProteins)
+rProteins = oneof [fmap AP rAnimalProteins, fmap Leg rLegumes]
 
--- rMenu :: Gen Menu
--- rMenu = do
---           m <- rProteins
---           return (Menu m)
+rVegetables :: Gen Vegetables
+rVegetables  = elements [Beetroots
+                       , BrusselsSprouts
+                       ,  Cabbage
+                       ,  Carrots
+                       ,  Cauliflower
+                       ,  GreenBeans
+                       ,  Leeks
+                       ,  Peas
+                       ,  Rutabaga
+                       ,  Spinach
+                       ,  Turnips]
 
--- rMenu :: Gen Menu
--- rMenu = do
---       p <- rProteins
---       return (Menu p)
+rCarbs :: Gen Carbs
+rCarbs = elements [Pasta
+                  , Rice
+                  , BrownRice
+                  , WholePasta
+                  , Potatoes
+                  , SweetPotatoes]
 
-legumes = ["haricots blancs"
-          , "haricots rouges"
-          , "lentilles vertes"
-          , "pois chiches"
-          , "lentilles corail"]
-vegetables = ["betteraves"
-             , "carottes"
-             , "choux de bruxelles"
-             , "choux-fleur"
-             , "haricots verts"
-             , "navets"
-             , "petits pois"
-             , "poireaux"
-             , "épinards"
-             ]
-
-randItem :: [a] -> IO a
-randItem = generate . elements
+rMenu :: Gen Menu
+rMenu = do
+   p <- rProteins
+   v <- rVegetables
+   c <- rCarbs
+   return (Menu p v c)
 
 main = do
-    seed  <- newStdGen
-    print "lol"
+   sample rMenu
     -- let rs = randomlist (length proteins) seed
     -- print $ proteins !! rs
-
-randomlist :: Int -> StdGen -> [Int]
-randomlist n = take n . unfoldr (Just . random)
