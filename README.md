@@ -39,4 +39,4 @@ Use it as the normal mplayer.
 Set a random wallpaper from a given folder.
 
 ## Parser example with attoparsec : `stages`
-Work in progress. The idea is to count identical lines in a given format.
+The idea is to count identical lines in a given format.
