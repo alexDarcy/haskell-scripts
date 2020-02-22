@@ -5,33 +5,33 @@ import System.Random
 import Data.List
 
 data AnimalProteins = Beef | Chicken | Fish
-  deriving  (Eq)
+  deriving  (Eq, Ord)
 data Legumes = WhiteBeans | RedBeans | Lentils | PinkLentils | Chickpeas
-  deriving  (Eq)
+  deriving  (Eq, Ord)
 data Vegetables = Beetroots | BrusselsSprouts | Cabbage | Carrots | Cauliflower | GreenBeans | Leeks | Peas | Rutabaga | Spinach | Turnips
-  deriving  (Eq)
+  deriving  (Eq, Ord)
 data Carbs = Pasta | Rice | BrownRice | WholePasta | Potatoes | SweetPotatoes
-  deriving  (Eq)
+  deriving  (Eq, Ord)
 
 data Proteins = AP AnimalProteins | Leg Legumes
   deriving  (Eq)
-data Menu = Menu Proteins Vegetables Carbs
+data Meal = Meal Proteins Vegetables Carbs
 
 -- Used later to remove menu with at least one common part
-instance Eq Menu where
-  (==) (Menu p1 v1 c1) (Menu p2 v2 c2) = p1 == p2 || v1 == v2 || c1 == c2
+instance Eq Meal where
+  (==) (Meal p1 v1 c1) (Meal p2 v2 c2) = p1 == p2 || v1 == v2 || c1 == c2
 
 -- Used to alternate between the 2 proteins
-hasAnimalProt :: Menu -> Bool
-hasAnimalProt (Menu (AP _) _ _) = True
+hasAnimalProt :: Meal -> Bool
+hasAnimalProt (Meal (AP _) _ _) = True
 hasAnimalProt _ = False
 
 instance Show Proteins where
     show (AP p) = show p
     show (Leg l) = show l
 
-instance Show Menu where
-    show (Menu p v c) = show p ++ ", " ++ show v ++ ", " ++ show c ++ "\n"
+instance Show Meal where
+    show (Meal p v c) = show p ++ ", " ++ show v ++ ", " ++ show c
    
 instance Show AnimalProteins where
     show Beef = "boeuf"
@@ -96,34 +96,59 @@ rCarbs = elements [Pasta
                   , Potatoes
                   , SweetPotatoes]
 
-rMenu :: Gen Menu
-rMenu = do
+rMeal :: Gen Meal
+rMeal = do
    p <- rProteins
    v <- rVegetables
    c <- rCarbs
-   return (Menu p v c)
+   return (Meal p v c)
 
 -- Menu with maybe some redudancy and not well ordered
-pseudoMenu :: Int -> IO [Menu]
+pseudoMenu :: Int -> IO [Meal]
 pseudoMenu n =
-  generate (sequence [ resize i rMenu | i <- [1..n] ])
+  generate (sequence [ resize i rMeal | i <- [1..n] ])
 
 -- -- Proteins only every 2 days
-alternateProt :: [Menu] -> [Menu]
+alternateProt :: [Meal] -> [Meal]
 alternateProt m = concat $ zipWith (\x y -> [x, y]) animal legumes
   where (animal, legumes) = partition (hasAnimalProt) m
 
+type ShoppingList = ([Carbs], [Legumes], [Vegetables], [AnimalProteins])
+
+-- Remove duplicate
+noDups x = map head . group . sort $ x
+-- 
+shoppingList :: [Meal]  -> [String]
+shoppingList m  = l'
+  where
+    (c, l, v, p) = shoppingList' m
+    l' = [f c, f l, f v, f p ]
+    f x = intercalate "\n" . map show $ noDups x
+
+-- Split the menu into a shopping list
+-- Separate vegetable and animal proteins
+shoppingList' :: [Meal] -> ShoppingList
+shoppingList' [] = ([], [], [], [])
+shoppingList' ((Meal p v c):xs) =
+  case p of
+    AP ap -> (c:carbs, legs, v:vegs, ap:aprots)
+    Leg l -> (c:carbs, l:legs, v:vegs, aprots)
+  where (carbs, legs, vegs, aprots) = shoppingList' xs
 -- -- Remove redudancy
 -- cleanMenu :: ([Menu], [Menu]) -> ([Menu], [Menu])
 -- cleanMenu ([], y) = ([], y)
 -- cleanMenu ([x:xs], y) = cleanMenu ( x : cleaned, others)
 --   where (cleaned, others) = partition (/= x) xs
+--
+-- printMenu m = do
+  -- print m
+  -- print $ shoppinglist m
 
 main = do
   let n = 7
   -- Take some margin because the randomisation has a lot of redudancies
   m <- pseudoMenu (4*n)
   let m' = take n $ alternateProt m
-  print m'
-    -- let rs = randomlist (length proteins) seed
-    -- print $ proteins !! rs
+  mapM_ print m'
+  putStrLn "--------"
+  putStrLn $ intercalate "\n\n" $ shoppingList m'
