@@ -41,3 +41,11 @@ main = hspec $ do
       let ref_sorted = reSort ref
       let output_sorted = reSort output
       ref_sorted == output_sorted `shouldBe` True
+
+    it "A2Trimestre3" $ do
+      output <- parseData "tests/postesa2trimestre3.txt"
+      TIO.writeFile "output.csv" output
+      ref <- TIO.readFile "tests/postesa2trimestre3_ref.txt"
+      let ref_sorted = reSort ref
+      let output_sorted = reSort output
+      ref_sorted == output_sorted `shouldBe` True

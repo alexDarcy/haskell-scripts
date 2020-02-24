@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.2.
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c5d0ca068bef710e8a2e9eabebb144f0a1af705bc534cc458923a6721afa2e94
+-- hash: e2116c3c8f2e6bfc887dc28575a536e926fda2a91f549b8e84c23c98b70c2f2c
 
 name:           stages
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
       attoparsec
     , base >=4.7 && <5
     , bytestring
+    , raw-strings-qq
     , text
   default-language: Haskell2010
 
@@ -46,6 +47,7 @@ executable stages-exe
       attoparsec
     , base >=4.7 && <5
     , bytestring
+    , raw-strings-qq
     , text
   default-language: Haskell2010
 
@@ -62,6 +64,7 @@ test-suite integration-test
     , base >=4.7 && <5
     , bytestring
     , hspec
+    , raw-strings-qq
     , stages
     , text
   default-language: Haskell2010

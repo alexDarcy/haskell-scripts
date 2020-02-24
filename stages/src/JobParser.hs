@@ -1,3 +1,4 @@
+{-# LANGUAGE QuasiQuotes #-}
 -- | Attoparsec example
 -- Data is created from a pdf with : pdftotex -layout
 -- After reading the data, we count identical entries
@@ -18,6 +19,7 @@ import qualified Data.Text.IO as TIO
 import qualified Data.Text as T
 import Data.List as L
 import Text.Printf
+import Text.RawString.QQ
 
 data Job = Job {id :: T.Text
   , unit :: T.Text
@@ -37,8 +39,13 @@ countIdentical x = map (\l -> (head l, length l)) (L.group . L.sort $ x)
 
 -- Print a Job with padding and the number of occurences
 -- Compatible with uniq output
-printEntry :: (Job, Int) -> T.Text
-printEntry (x, y) = T.pack $ printf "%7d %s" y (unit x)
+printEntryCSV :: (Job, Int) -> T.Text
+printEntryCSV (x, y) = T.pack $ printf "%7d %s" y (unit x)
+
+-- Print a Job with padding and the number of occurences
+-- Compatible for latex
+printEntryLATEX :: (Job, Int) -> T.Text
+printEntryLATEX (x, y) = T.pack $ printf "%s & %7d\\\\" (unit x) y
 
 parseID :: Parser T.Text
 parseID  = do
@@ -102,7 +109,32 @@ getAllJobs = fromRight [] . (parseOnly parseAllJobs)
 parseData f = do
   file <- TIO.readFile f
 -- We cannot read line by line as some Jobs are multi-line.....
-  let all = fromRight [] $ parseOnly parseAllJobs file
+  return $ countIdentical $ fromRight [] $ parseOnly parseAllJobs file
+
+printCSV f all = do
   -- Count identical entries
-  let output =  map printEntry $ countIdentical all
-  return $ T.unlines output
+  let output =  map printEntryCSV  all
+  TIO.writeFile f $ T.unlines output
+
+header :: String
+header = [r|\documentclass{article}
+ \usepackage[margin=5pt, left=15pt]{geometry}
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage{xtab}
+% \usepackage{pgfplotstable,filecontents}
+
+\begin{document}
+
+\twocolumn
+\begin{xtabular}{p{8cm}c}
+\shrinkheight{-2in} % hack for less page|]
+
+footer :: String
+footer = [r| \end{xtabular}
+\end{document}|]
+
+printLATEX f all = do
+  -- Count identical entries
+  let output =  map printEntryLATEX  all
+  TIO.writeFile f $ T.unlines $ (T.pack header) : output ++ [T.pack footer]
