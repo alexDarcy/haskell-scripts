@@ -8,7 +8,7 @@ of theme use Shelly. Details of the scripts are given below.
 
 
 ## UsageInstallation
-We need `stack` ! But we won't configure any projects... so just run
+We need `stack` ! For some of this project, you won't configure any projects... so just run
 
     $ stack myscript.hs
 
@@ -40,3 +40,7 @@ Set a random wallpaper from a given folder.
 
 ## Parser example with attoparsec : `stages`
 The idea is to count identical lines in a given format.
+
+## HTML Parser example with tagsoup `goodreads`
+Parse the askHistorians book list on GoodsReads
+This is a stak project .
