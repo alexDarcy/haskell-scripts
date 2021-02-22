@@ -32,20 +32,21 @@ import Data.Maybe (fromJust)
 -- import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 
-data Token = Token { access_token :: String } deriving (Generic, Show)
+data Token = Token {
+  access_token :: String,
+  token_type :: String
+  } deriving (Generic)
+
+instance Show Token where
+  show (Token a t)  = t ++ " " ++ a
 
 instance FromJSON Token
-main :: IO ()
-main = do
-  loginRaw <- readFile "login.conf"
-  let login = lines loginRaw
-  t <- getToken login
-  print t
 
+-- First, get the token before requesting the API
 getToken :: [String] -> IO Token
 getToken login = runReq defaultHttpConfig $ do
   uri <- URI.mkURI "https://www.reddit.com/api/v1/access_token"
-  let (url, options) = fromJust (useHttpsURI uri)
+  let (url, _) = fromJust (useHttpsURI uri)
   r <- req POST url NoReqBody jsonResponse $
         "grant_type" =: ("password" :: String) <>
         "username" =: (login !! 0) <>
@@ -54,4 +55,19 @@ getToken login = runReq defaultHttpConfig $ do
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)"
   pure (responseBody r :: Token)
 
--- -H "Authorization: bearer J1qK1c18UUGJFAzz9xnH56584l4" -A "ChangeMeClient/0.1 by YourUsername" https://oauth.reddit.com/api/v1/me
+readWiki :: Token -> IO ()
+readWiki t = runReq defaultHttpConfig $ do
+  uri <- URI.mkURI "https://oauth.reddit.com/api/v1/me"
+  let (url, _) = fromJust (useHttpsURI uri)
+  r <- req GET url NoReqBody jsonResponse $
+        header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)" <>
+        header "Authorization" (C.pack . show $ t)
+  liftIO $ print (responseBody r :: Value)
+
+main :: IO ()
+main = do
+  loginRaw <- readFile "login.conf"
+  let login = lines loginRaw
+  t <- getToken login
+  putStrLn $ show t
+  readWiki t
