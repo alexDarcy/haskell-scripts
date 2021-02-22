@@ -57,12 +57,12 @@ getToken login = runReq defaultHttpConfig $ do
 
 readWiki :: Token -> IO ()
 readWiki t = runReq defaultHttpConfig $ do
-  uri <- URI.mkURI "https://oauth.reddit.com/api/v1/me"
+  uri <- URI.mkURI "https://oauth.reddit.com/r/AskHistorians/wiki/books"
   let (url, _) = fromJust (useHttpsURI uri)
-  r <- req GET url NoReqBody jsonResponse $
+  r <- req GET url NoReqBody bsResponse $
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)" <>
         header "Authorization" (C.pack . show $ t)
-  liftIO $ print (responseBody r :: Value)
+  liftIO $ print (responseBody r )
 
 main :: IO ()
 main = do
