@@ -24,6 +24,7 @@
 module Main (main) where
 
 import Control.Monad.IO.Class
+import Control.Monad
 import Data.Aeson
 import GHC.Generics
 import Network.HTTP.Req
@@ -37,10 +38,25 @@ data Token = Token {
   token_type :: String
   } deriving (Generic)
 
+data RawData = RawData {
+  _data :: RawMarkdown
+  } deriving (Generic, Show)
+
+data RawMarkdown = RawMarkdown {
+  content_md :: String
+  } deriving (Generic, Show)
+
+
 instance Show Token where
   show (Token a t)  = t ++ " " ++ a
 
 instance FromJSON Token
+instance FromJSON RawMarkdown
+
+instance FromJSON RawData where
+ parseJSON (Object v) =
+    RawData  <$> v .: "data"
+ parseJSON _ = mzero
 
 -- First, get the token before requesting the API
 getToken :: [String] -> IO Token
@@ -59,10 +75,10 @@ readWiki :: Token -> IO ()
 readWiki t = runReq defaultHttpConfig $ do
   uri <- URI.mkURI "https://oauth.reddit.com/r/AskHistorians/wiki/books"
   let (url, _) = fromJust (useHttpsURI uri)
-  r <- req GET url NoReqBody bsResponse $
+  r <- req GET url NoReqBody jsonResponse $
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)" <>
         header "Authorization" (C.pack . show $ t)
-  liftIO $ print (responseBody r )
+  liftIO $ print (responseBody r :: RawData)
 
 main :: IO ()
 main = do
