@@ -23,9 +23,11 @@
 
 module Main (main) where
 
+import CMark
 import Control.Monad.IO.Class
 import Control.Monad
 import Data.Aeson
+import Data.Text as T
 import GHC.Generics
 import Network.HTTP.Req
 import qualified Text.URI as URI
@@ -80,10 +82,38 @@ readWiki t = runReq defaultHttpConfig $ do
         header "Authorization" (C.pack . show $ t)
   liftIO $ print (responseBody r :: RawData)
 
+-- Node (Maybe PosInfo) NodeType [Node]
+-- The document is just a list of nodes apparently. No need to go deep
+-- Example :
+-- # Test
+--  Content
+--  ## Lol
+-- becomes
+-- Node  DOCUMENT [
+--   Node  (HEADING 1) [Node  (TEXT "Test") []],
+--   Node  PARAGRAPH [Node  (TEXT "Content") []],
+--   Node  (HEADING 2) [Node  (TEXT "Lol") []]]
+-- parse :: Node -> Text
+-- parse (Node (Just _) (HEADING level) [Node (Just _) (TEXT title) _]) = title
+-- parse (Node (Just _) _ []) = ""
+-- parse (Node (Just _) _ n) = Prelude.concat (Prelude.map parse n)
+
+printNode :: Int -> Node -> String
+printNode depth (Node (Just _) t []) = offset ++ show t ++ "\n"
+  where
+    offset = Prelude.concat $ Prelude.take depth $ repeat "--"
+printNode depth (Node (Just _) t n) = offset ++ show t ++ "\n"  ++ n'
+  where
+    offset = Prelude.concat $ Prelude.take depth $ repeat "--"
+    n' = Prelude.concatMap (printNode (depth+1)) n
+
+s = "## Books and Resources list\r\n\r\n### Also available on [Goodreads!](https://www.goodreads.com/askhistorians) "
 main :: IO ()
 main = do
-  loginRaw <- readFile "login.conf"
-  let login = lines loginRaw
-  t <- getToken login
-  putStrLn $ show t
-  readWiki t
+  -- loginRaw <- readFile "login.conf"
+  -- let login = lines loginRaw
+  -- t <- getToken login
+  -- putStrLn $ show t
+  -- readWiki t
+  print $ commonmarkToNode [] (T.pack s)
+  putStrLn $ printNode 0 $ commonmarkToNode [] (T.pack s)
