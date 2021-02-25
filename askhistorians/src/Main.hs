@@ -44,7 +44,7 @@ data Book = Book {
 } deriving (Generic)
 
 instance Show Book where
-  show (Book t _ _ d) = show t ++ ": " ++ show (T.take 10 d)
+  show (Book t _ _ d) = show $ T.concat [t, T.pack ":", T.take 10 d]
 
 
 -- For reddit API requests ---
@@ -53,11 +53,11 @@ data Token = Token {
   token_type :: String
   } deriving (Generic)
 
-data RawData = RawData {
+newtype RawData = RawData {
   _data :: RawMarkdown
   } deriving (Generic, Show)
 
-data RawMarkdown = RawMarkdown {
+newtype RawMarkdown = RawMarkdown {
   content_md :: String
   } deriving (Generic, Show)
 
@@ -82,7 +82,7 @@ getToken login = runReq defaultHttpConfig $ do
   let (url, _) = fromJust (useHttpsURI uri)
   r <- req POST url NoReqBody jsonResponse $
         "grant_type" =: ("password" :: String) <>
-        "username" =: (login !! 0) <>
+        "username" =: Prelude.head login <>
         "password" =: (login !! 1) <>
         basicAuth (C.pack $ login !! 2) (C.pack $ login !! 3) <>
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)"
@@ -112,15 +112,16 @@ readWiki url t = runReq defaultHttpConfig $ do
 --   Node  PARAGRAPH [Node  (TEXT "Content") []],
 --   Node  (HEADING 2) [Node  (TEXT "Lol") []]]
 
--- The title is actually 2 nodes deep into a link !
-titleFromLink :: Node -> Text
-titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
-titleFromLink _ = ""
+-- -- The title is actually 2 nodes deep into a link !
+-- titleFromLink :: Node -> Text
+-- titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
+-- titleFromLink _ = ""
 
 -- A Paragraph node contains a list of nodes
 -- 1. a link node with the amazon link
 -- -> nested into the link node, an Emph node which contains a text node with the title !!
 -- 2. Text node with the description
+-- FIXME Ugly pattern matching
 bookFromParagraph :: [Node] -> Maybe Book
 bookFromParagraph [Node (Just _) (LINK url _) [
                       Node (Just _) EMPH [Node (Just _) (TEXT title) []]
@@ -131,18 +132,19 @@ bookFromParagraph _ = Nothing
 -- titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
                    -- (Node titleemph descr) n) = [titleFromLink . Prelude.head $ n]
 -- Extract only links
-parseLinks :: Node -> [Maybe Book]
-parseLinks (Node (Just _) PARAGRAPH n) = [bookFromParagraph n]
-parseLinks (Node (Just _) _ []) = []
+parseLinks :: Node -> [Book]
+parseLinks (Node (Just _) PARAGRAPH n) = maybe [] (\x -> [x]) $ bookFromParagraph n
 parseLinks (Node (Just _) _ n) = Prelude.concatMap parseLinks n
+parseLinks (Node _ _ []) = []
+
+-- helper function
+offset :: Int -> String
+offset depth = Prelude.concat $ Prelude.replicate depth  "--"
 
 printNode :: Int -> Node -> String
-printNode depth (Node (Just _) t []) = offset ++ show t ++ "\n"
+printNode depth (Node (Just _) t []) = offset depth ++ show t ++ "\n"
+printNode depth (Node (Just _) t n) = offset depth ++ show t ++ "\n"  ++ n'
   where
-    offset = Prelude.concat $ Prelude.take depth $ repeat "--"
-printNode depth (Node (Just _) t n) = offset ++ show t ++ "\n"  ++ n'
-  where
-    offset = Prelude.concat $ Prelude.take depth $ repeat "--"
     n' = Prelude.concatMap (printNode (depth+1)) n
 
 -- s = "## Books and Resources list\r\n\r\n### Also available on [Goodreads!](https://www.goodreads.com/askhistorians) "
@@ -151,13 +153,13 @@ main = do
   loginRaw <- readFile "login.conf"
   let login = Prelude.lines loginRaw
   t <- getToken login
-  putStrLn $ show t
+  print t
   -- This is easy
   r <- readWiki (T.pack $ root ++ "wiki/books/general") t
   let md = T.pack . content_md . _data $ r
   -- print $ content_md . _data $ r
   let nodes = commonmarkToNode [] md
-  putStrLn $ printNode 0 $ nodes
+  putStrLn $ printNode 0 nodes
   print $ parseLinks nodes
   -- putStrLn $ printNode 0 $ commonmarkToNode [] (T.pack s)
   -- putStrLn $ printNode 0 $ commonmarkToNode [] md
