@@ -35,6 +35,19 @@ import Data.Maybe (fromJust)
 -- import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 
+-- Data structure for books ---
+data Book = Book {
+  title :: T.Text,
+  themes :: [T.Text],
+  amazon :: T.Text,
+  description :: T.Text
+} deriving (Generic)
+
+instance Show Book where
+  show (Book t _ _ d) = show t ++ ": " ++ show (T.take 10 d)
+
+
+-- For reddit API requests ---
 data Token = Token {
   access_token :: String,
   token_type :: String
@@ -60,6 +73,8 @@ instance FromJSON RawData where
     RawData  <$> v .: "data"
  parseJSON _ = mzero
 
+
+
 -- First, get the token before requesting the API
 getToken :: [String] -> IO Token
 getToken login = runReq defaultHttpConfig $ do
@@ -73,9 +88,12 @@ getToken login = runReq defaultHttpConfig $ do
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)"
   pure (responseBody r :: Token)
 
-readWiki :: Token -> IO RawData
-readWiki t = runReq defaultHttpConfig $ do
-  uri <- URI.mkURI "https://oauth.reddit.com/r/AskHistorians/wiki/books"
+root :: String
+root = "https://oauth.reddit.com/r/AskHistorians/"
+
+readWiki :: Text -> Token -> IO RawData
+readWiki url t = runReq defaultHttpConfig $ do
+  uri <- URI.mkURI url
   let (url, _) = fromJust (useHttpsURI uri)
   r <- req GET url NoReqBody jsonResponse $
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)" <>
@@ -93,10 +111,30 @@ readWiki t = runReq defaultHttpConfig $ do
 --   Node  (HEADING 1) [Node  (TEXT "Test") []],
 --   Node  PARAGRAPH [Node  (TEXT "Content") []],
 --   Node  (HEADING 2) [Node  (TEXT "Lol") []]]
--- parse :: Node -> Text
--- parse (Node (Just _) (HEADING level) [Node (Just _) (TEXT title) _]) = title
--- parse (Node (Just _) _ []) = ""
--- parse (Node (Just _) _ n) = Prelude.concat (Prelude.map parse n)
+
+-- The title is actually 2 nodes deep into a link !
+titleFromLink :: Node -> Text
+titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
+titleFromLink _ = ""
+
+-- A Paragraph node contains a list of nodes
+-- 1. a link node with the amazon link
+-- -> nested into the link node, an Emph node which contains a text node with the title !!
+-- 2. Text node with the description
+bookFromParagraph :: [Node] -> Maybe Book
+bookFromParagraph [Node (Just _) (LINK url _) [
+                      Node (Just _) EMPH [Node (Just _) (TEXT title) []]
+                      ]
+                  , Node (Just _) (TEXT descr) []] = Just $ Book title [] url descr
+bookFromParagraph _ = Nothing
+
+-- titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
+                   -- (Node titleemph descr) n) = [titleFromLink . Prelude.head $ n]
+-- Extract only links
+parseLinks :: Node -> [Maybe Book]
+parseLinks (Node (Just _) PARAGRAPH n) = [bookFromParagraph n]
+parseLinks (Node (Just _) _ []) = []
+parseLinks (Node (Just _) _ n) = Prelude.concatMap parseLinks n
 
 printNode :: Int -> Node -> String
 printNode depth (Node (Just _) t []) = offset ++ show t ++ "\n"
@@ -114,8 +152,12 @@ main = do
   let login = Prelude.lines loginRaw
   t <- getToken login
   putStrLn $ show t
-  r <- readWiki t
+  -- This is easy
+  r <- readWiki (T.pack $ root ++ "wiki/books/general") t
   let md = T.pack . content_md . _data $ r
   -- print $ content_md . _data $ r
-  putStrLn $ printNode 0 $ commonmarkToNode [] md
+  let nodes = commonmarkToNode [] md
+  putStrLn $ printNode 0 $ nodes
+  print $ parseLinks nodes
   -- putStrLn $ printNode 0 $ commonmarkToNode [] (T.pack s)
+  -- putStrLn $ printNode 0 $ commonmarkToNode [] md
