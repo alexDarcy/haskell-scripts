@@ -73,14 +73,14 @@ getToken login = runReq defaultHttpConfig $ do
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)"
   pure (responseBody r :: Token)
 
-readWiki :: Token -> IO ()
+readWiki :: Token -> IO RawData
 readWiki t = runReq defaultHttpConfig $ do
   uri <- URI.mkURI "https://oauth.reddit.com/r/AskHistorians/wiki/books"
   let (url, _) = fromJust (useHttpsURI uri)
   r <- req GET url NoReqBody jsonResponse $
         header "User-Agent" "freebsd:askhistorians:v1.2.3 (by /u/clumskyKnife)" <>
         header "Authorization" (C.pack . show $ t)
-  liftIO $ print (responseBody r :: RawData)
+  pure (responseBody r :: RawData)
 
 -- Node (Maybe PosInfo) NodeType [Node]
 -- The document is just a list of nodes apparently. No need to go deep
@@ -107,13 +107,15 @@ printNode depth (Node (Just _) t n) = offset ++ show t ++ "\n"  ++ n'
     offset = Prelude.concat $ Prelude.take depth $ repeat "--"
     n' = Prelude.concatMap (printNode (depth+1)) n
 
-s = "## Books and Resources list\r\n\r\n### Also available on [Goodreads!](https://www.goodreads.com/askhistorians) "
+-- s = "## Books and Resources list\r\n\r\n### Also available on [Goodreads!](https://www.goodreads.com/askhistorians) "
 main :: IO ()
 main = do
-  -- loginRaw <- readFile "login.conf"
-  -- let login = lines loginRaw
-  -- t <- getToken login
-  -- putStrLn $ show t
-  -- readWiki t
-  print $ commonmarkToNode [] (T.pack s)
-  putStrLn $ printNode 0 $ commonmarkToNode [] (T.pack s)
+  loginRaw <- readFile "login.conf"
+  let login = Prelude.lines loginRaw
+  t <- getToken login
+  putStrLn $ show t
+  r <- readWiki t
+  let md = T.pack . content_md . _data $ r
+  -- print $ content_md . _data $ r
+  putStrLn $ printNode 0 $ commonmarkToNode [] md
+  -- putStrLn $ printNode 0 $ commonmarkToNode [] (T.pack s)
