@@ -129,7 +129,10 @@ titleFromLink _ = Nothing
 bookFromParagraph :: [Node] -> Maybe Book
 bookFromParagraph [Node _ (LINK url _) [emp]
                   , Node _ (TEXT descr) []] = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
--- bookFromParagraph [Node _ (LINK url _) [emp] , Node _ (TEXT descr) []] =
+bookFromParagraph [Node _ (LINK url _) [emp]
+                  , Node _ (TEXT _) _
+                  , Node _ (LINK _ _) _
+                  , Node _ (TEXT descr) []] = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
 bookFromParagraph _ = Nothing
 
 -- titleFromLink (Node _ EMPH [Node _ (TEXT t) []]) = t
