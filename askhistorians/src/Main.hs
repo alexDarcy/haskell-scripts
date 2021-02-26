@@ -31,7 +31,7 @@ import Data.Text as T
 import GHC.Generics
 import Network.HTTP.Req
 import qualified Text.URI as URI
-import Data.Maybe (fromJust)
+import Data.Maybe
 -- import qualified Data.ByteString as B
 import qualified Data.ByteString.Char8 as C
 
@@ -113,37 +113,39 @@ readWiki url t = runReq defaultHttpConfig $ do
 --   Node  (HEADING 2) [Node  (TEXT "Lol") []]]
 
 -- -- The title is actually 2 nodes deep into a link !
--- titleFromLink :: Node -> Text
--- titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
--- titleFromLink _ = ""
+titleFromLink :: Node -> Maybe Text
+titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = Just t
+titleFromLink _ = Nothing
 
 -- A Paragraph node contains a list of nodes
 -- 1. a link node with the amazon link
 -- -> nested into the link node, an Emph node which contains a text node with the title !!
 -- 2. Text node with the description
--- FIXME Ugly pattern matching
+-- TODO: if there are 2 links, we only get the first title. What if there are more than 2 ?
+-- bookFromParagraph [Node _ (LINK url _) [emp] , Node _ (LINK url _) [emp2] , Node _ (TEXT descr) []]
+--   | title' == "" =  Nothing
+--   | otherwise = Just $ Book title' [] url descr
+--   where title' = titleFromLink emp1
 bookFromParagraph :: [Node] -> Maybe Book
-bookFromParagraph [Node (Just _) (LINK url _) [
-                      Node (Just _) EMPH [Node (Just _) (TEXT title) []]
-                      ]
-                  , Node (Just _) (TEXT descr) []] = Just $ Book title [] url descr
+bookFromParagraph [Node _ (LINK url _) [emp]
+                  , Node _ (TEXT descr) []] = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
+-- bookFromParagraph [Node _ (LINK url _) [emp] , Node _ (TEXT descr) []] =
 bookFromParagraph _ = Nothing
 
--- titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = t
+-- titleFromLink (Node _ EMPH [Node _ (TEXT t) []]) = t
                    -- (Node titleemph descr) n) = [titleFromLink . Prelude.head $ n]
 -- Extract only links
 parseLinks :: Node -> [Book]
-parseLinks (Node (Just _) PARAGRAPH n) = maybe [] (\x -> [x]) $ bookFromParagraph n
-parseLinks (Node (Just _) _ n) = Prelude.concatMap parseLinks n
-parseLinks (Node _ _ []) = []
+parseLinks (Node _ PARAGRAPH n) = maybeToList $ bookFromParagraph n
+parseLinks (Node _ _ n) = Prelude.concatMap parseLinks n
 
 -- helper function
 offset :: Int -> String
 offset depth = Prelude.concat $ Prelude.replicate depth  "--"
 
 printNode :: Int -> Node -> String
-printNode depth (Node (Just _) t []) = offset depth ++ show t ++ "\n"
-printNode depth (Node (Just _) t n) = offset depth ++ show t ++ "\n"  ++ n'
+printNode depth (Node _ t []) = offset depth ++ show t ++ "\n"
+printNode depth (Node _ t n) = offset depth ++ show t ++ "\n"  ++ n'
   where
     n' = Prelude.concatMap (printNode (depth+1)) n
 
@@ -160,6 +162,5 @@ main = do
   -- print $ content_md . _data $ r
   let nodes = commonmarkToNode [] md
   putStrLn $ printNode 0 nodes
+  print $ Prelude.length $ parseLinks nodes
   print $ parseLinks nodes
-  -- putStrLn $ printNode 0 $ commonmarkToNode [] (T.pack s)
-  -- putStrLn $ printNode 0 $ commonmarkToNode [] md
