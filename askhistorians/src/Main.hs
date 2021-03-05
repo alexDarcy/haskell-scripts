@@ -23,11 +23,12 @@
 
 module Main (main) where
 
+import Data.List.Split
 import CMark
 import Control.Monad.IO.Class
 import Control.Monad
 import Data.Aeson
-import Data.Text as T
+import qualified Data.Text as T
 import GHC.Generics
 import Network.HTTP.Req
 import qualified Text.URI as URI
@@ -91,7 +92,7 @@ getToken login = runReq defaultHttpConfig $ do
 root :: String
 root = "https://oauth.reddit.com/r/AskHistorians/"
 
-readWiki :: Text -> Token -> IO RawData
+readWiki :: T.Text -> Token -> IO RawData
 readWiki url t = runReq defaultHttpConfig $ do
   uri <- URI.mkURI url
   let (url, _) = fromJust (useHttpsURI uri)
@@ -113,57 +114,81 @@ readWiki url t = runReq defaultHttpConfig $ do
 --   Node  (HEADING 2) [Node  (TEXT "Lol") []]]
 
 -- -- The title is actually 2 nodes deep into a link !
-titleFromLink :: Node -> Maybe Text
+titleFromLink :: Node -> Maybe T.Text
 titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = Just t
 titleFromLink _ = Nothing
 
--- A Paragraph node contains a list of nodes
--- 1. a link node with the amazon link
--- -> nested into the link node, an Emph node which contains a text node with the title !!
--- 2. Text node with the description
--- TODO: if there are 2 links, we only get the first title. What if there are more than 2 ?
--- bookFromParagraph [Node _ (LINK url _) [emp] , Node _ (LINK url _) [emp2] , Node _ (TEXT descr) []]
---   | title' == "" =  Nothing
---   | otherwise = Just $ Book title' [] url descr
---   where title' = titleFromLink emp1
-bookFromParagraph :: [Node] -> Maybe Book
-bookFromParagraph [Node _ (LINK url _) [emp]
-                  , Node _ (TEXT descr) []] = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
-bookFromParagraph [Node _ (LINK url _) [emp]
-                  , Node _ (TEXT _) _
-                  , Node _ (LINK _ _) _
-                  , Node _ (TEXT descr) []] = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
-bookFromParagraph _ = Nothing
+createBook url descr emp = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
 
--- titleFromLink (Node _ EMPH [Node _ (TEXT t) []]) = t
-                   -- (Node titleemph descr) n) = [titleFromLink . Prelude.head $ n]
--- Extract only links
-parseLinks :: Node -> [Book]
-parseLinks (Node _ PARAGRAPH n) = maybeToList $ bookFromParagraph n
-parseLinks (Node _ _ n) = Prelude.concatMap parseLinks n
+-- 1. either a link node with the amazon link and the title (2 levels deep !)
+-- 2. Text node with the description
+-- Warning: there may be 2 links (two-parts books) with a shared description. We skip the second title
+-- TODO: Hope it will not break
+bookFromParagraph :: [Node] -> [Maybe Book]
+bookFromParagraph ((Node _ (LINK url _) [emp])
+                   : (Node _ (TEXT descr) [])
+                   : xs) = createBook url descr emp : bookFromParagraph xs
+bookFromParagraph ((Node _ (LINK url _) [emp])
+                   : (Node _ (TEXT _) _)
+                   : (Node _ (LINK _ _) _)
+                   : (Node _ (TEXT descr) [])
+                   : xs)= createBook url descr emp : bookFromParagraph xs
+bookFromParagraph _ = []
+
+-- The document is actually a list of nodes (as lines in a text)
+-- -- If we want to propagate the header to books, we have to split this list
+splitByHeading :: [Node] -> String
+splitByHeading [(Node _ (HEADING n) x), xs] = "lol"
+
+-- readDocument :: Node -> [Node]
+-- readDocument (Node _ DOCUMENT xs) = splitByHeading xs
+getBooks :: Node -> [Book]
+getBooks (Node _ PARAGRAPH n) = catMaybes $ bookFromParagraph n
+getBooks (Node _ _ n) = concatMap getBooks n
 
 -- helper function
 offset :: Int -> String
 offset depth = Prelude.concat $ Prelude.replicate depth  "--"
 
+-- helper function
 printNode :: Int -> Node -> String
 printNode depth (Node _ t []) = offset depth ++ show t ++ "\n"
 printNode depth (Node _ t n) = offset depth ++ show t ++ "\n"  ++ n'
   where
     n' = Prelude.concatMap (printNode (depth+1)) n
 
--- s = "## Books and Resources list\r\n\r\n### Also available on [Goodreads!](https://www.goodreads.com/askhistorians) "
+skipDocument :: Node -> [Node]
+skipDocument (Node _ DOCUMENT n) = n
+skipDocument _ = []
+
+isHeading :: Int -> Node -> Bool
+isHeading level (Node _ (HEADING level') _) = level == level'
+isHeading _ _ = False
+
+
+sample = do
+  f <- readFile "general.md"
+  let nodes = commonmarkToNode [] $ T.pack f
+  -- return $ concatMap bookFromParagraph $ getParagraph nodes
+  return $  getBooks nodes
+  -- let groups = split (keepDelimsL $ whenElt (isHeading 3)) $ skipDocument nodes
+  -- return groups
+  -- print . Prelude.head $ l
+  -- print . Prelude.head $ listNodes
+  -- putStrLn $ printNode 0 nodes
+
 main :: IO ()
 main = do
   loginRaw <- readFile "login.conf"
   let login = Prelude.lines loginRaw
   t <- getToken login
   print t
-  -- This is easy
+  -- This wiki page is easy
   r <- readWiki (T.pack $ root ++ "wiki/books/general") t
   let md = T.pack . content_md . _data $ r
   -- print $ content_md . _data $ r
   let nodes = commonmarkToNode [] md
+  -- print nodes
   putStrLn $ printNode 0 nodes
-  print $ Prelude.length $ parseLinks nodes
-  print $ parseLinks nodes
+  -- print $ Prelude.length $ getBooks nodes
+  -- print $ getBooks nodes

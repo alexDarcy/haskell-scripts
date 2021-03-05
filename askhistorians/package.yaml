@@ -27,6 +27,7 @@ dependencies:
 - HTTP
 - modern-uri
 - req
+- split
 - tagsoup
 - text
 
