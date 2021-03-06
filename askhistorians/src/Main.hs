@@ -44,6 +44,11 @@ data Book = Book {
   description :: T.Text
 } deriving (Generic)
 
+data HeadingMD = HeadingMD {
+  category :: T.Text,
+  level :: Int
+} deriving (Generic, Show)
+
 instance Show Book where
   show (Book t cat _ d) = show $ T.concat l
     where
@@ -145,9 +150,9 @@ bookFromParagraph _ _ = []
 -- A book is actually an item. For simplicity, we only search though paragraph with the following structure :
 -- - a link (to amazon) with the book title
 -- - text (description)
-getBooksP :: [T.Text] -> Node -> [Book]
-getBooksP category (Node _ PARAGRAPH n) = catMaybes $ bookFromParagraph category n
-getBooksP category (Node _ _ n) = concatMap (getBooksP category) n
+getBooksP :: [HeadingMD] -> Node -> [Book]
+getBooksP hs (Node _ PARAGRAPH n) = catMaybes $ bookFromParagraph (map category hs) n
+getBooksP hs (Node _ _ n) = concatMap (getBooksP hs) n
 
 -- The document is a list of headings and paragraph.
 -- the catagories are extracted from the headings and passed down to the book parser
@@ -159,13 +164,16 @@ getCategory [Node {}] = ""
 getCategory [] = ""
 
 getBooks  :: Node -> [Book]
-getBooks  (Node _ DOCUMENT xs) = getBooksL [] xs
+getBooks  (Node _ DOCUMENT xs) = getBooksL [HeadingMD "" 0] xs
 getBooks  _ = []
 
-getBooksL :: [T.Text] -> [Node] -> [Book]
-getBooksL cat (Node _ (HEADING h) hs : xs) = getBooksL c xs
-  where c = getCategory hs : cat
-getBooksL cat ((Node _ _ ns) : xs) = concatMap (getBooksP cat) ns ++ getBooksL cat xs
+getBooksL :: [HeadingMD] -> [Node] -> [Book]
+getBooksL hs (Node _ (HEADING n) l : xs) = getBooksL hs' xs
+  where
+    -- Remove headings under the current ones (so with a higher level)
+    hs' = h : dropWhile (\x -> level x >= level h) hs
+    h = HeadingMD (getCategory l) n
+getBooksL hs ((Node _ _ ns) : xs) = concatMap (getBooksP hs) ns ++ getBooksL hs xs
 getBooksL _ [] = []
 
 -- helper function
@@ -181,11 +189,9 @@ printNode depth (Node _ t n) = offset depth ++ show t ++ "\n"  ++ n'
 
 
 sample = do
-  f <- readFile "general.md"
+  f <- readFile "biographies.md"
   let nodes = commonmarkToNode [] $ T.pack f
   return $  getBooks nodes
-  -- return $ concatMap bookFromParagraph $ getParagraph nodes
-  -- putStrLn $ printNode 0 nodes
 
 main :: IO ()
 main = do
