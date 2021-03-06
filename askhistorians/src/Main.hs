@@ -136,16 +136,36 @@ createBook emp cat url descr = (\x -> Just $ Book x cat url descr) =<< titleFrom
 -- , TEXT = description ]
 -- Warning: there may be 2 links (two-parts books) with a shared description. We skip the second title
 -- TODO: Hope it will not break
+
+-- Apart from the link, every text in the paragraph is a description. Even markup such a EMPH etc
+-- Get all TEXT node and concatenate them. Except for LINK (contains the title + url)
+getText :: Node -> T.Text
+getText (Node _ (TEXT descr) []) = descr
+getText (Node _ (LINK _ _) _) = ""
+getText (Node _ _  xs) = T.concat $ map getText xs
+
+-- URL and title are in LINK node
+getUrlTitle :: Node -> (T.Text, T.Text)
+getUrlTitle  (Node _ (LINK url _) xs) = (url, T.concat $ map getText xs)
+getUrlTitle  (Node _ _  xs) = filterUrlTitle $ map getUrlTitle xs
+
+filterUrlTitle :: [(T.Text, T.Text)] -> (T.Text, T.Text)
+filterUrlTitle  l
+  | null search = ("", "")
+  | otherwise = head search
+    where search = dropWhile (\x -> snd x == T.empty) l
+
+getUrlTitleL :: [Node] -> Maybe (T.Text, T.Text)
+getUrlTitleL xs
+  | null l = Nothing
+  | otherwise = Just $ head l
+    where l = dropWhile (\x -> snd x == T.empty) $ map getUrlTitle xs
+
 bookFromParagraph :: [T.Text] -> [Node] -> [Maybe Book]
-bookFromParagraph category ((Node _ (LINK url _) [emp])
-                   : (Node _ (TEXT descr) [])
-                   : xs) = createBook emp category url descr : bookFromParagraph category xs
-bookFromParagraph category ((Node _ (LINK url _) [emp])
-                   : (Node _ (TEXT _) _)
-                   : (Node _ (LINK _ _) _)
-                   : (Node _ (TEXT descr) [])
-                   : xs)= createBook emp category url descr : bookFromParagraph category xs
-bookFromParagraph _ _ = []
+bookFromParagraph cat xs = maybe [] f $ getUrlTitleL xs
+  where
+    f (url, title) = [Just $ Book title cat url descr]
+    descr = T.concat $ map getText xs
 
 -- A book is actually an item. For simplicity, we only search though paragraph with the following structure :
 -- - a link (to amazon) with the book title
@@ -189,9 +209,11 @@ printNode depth (Node _ t n) = offset depth ++ show t ++ "\n"  ++ n'
 
 
 sample = do
+  -- f <- readFile "bio.md"
   f <- readFile "biographies.md"
   let nodes = commonmarkToNode [] $ T.pack f
-  return $  getBooks nodes
+  return $  nodes
+  -- return $  getBooks nodes
 
 main :: IO ()
 main = do
