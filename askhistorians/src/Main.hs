@@ -39,14 +39,16 @@ import qualified Data.ByteString.Char8 as C
 -- Data structure for books ---
 data Book = Book {
   title :: T.Text,
-  themes :: [T.Text],
+  categories :: [T.Text],
   amazon :: T.Text,
   description :: T.Text
 } deriving (Generic)
 
 instance Show Book where
-  show (Book t _ _ d) = show $ T.concat [t, T.pack ":", T.take 10 d]
-
+  show (Book t cat _ d) = show $ T.concat l
+    where
+      l = t : cat' : [ T.pack ":", T.take 10 d]
+      cat' = T.concat [" (",  T.intercalate "," cat , ")"]
 
 -- For reddit API requests ---
 data Token = Token {
@@ -118,33 +120,53 @@ titleFromLink :: Node -> Maybe T.Text
 titleFromLink (Node (Just _) EMPH [Node (Just _) (TEXT t) []]) = Just t
 titleFromLink _ = Nothing
 
-createBook url descr emp = (\x -> Just $ Book x [] url descr) =<< titleFromLink emp
+createBook :: Node -> [T.Text] -> T.Text -> T.Text -> Maybe Book
+createBook emp cat url descr = (\x -> Just $ Book x cat url descr) =<< titleFromLink emp
 
--- 1. either a link node with the amazon link and the title (2 levels deep !)
--- 2. Text node with the description
+-- The node structure for a Book inside a paragraph is a list :
+-- [ LINK = amazon link
+--    [ EMPH
+--      [ TEXT = title ]
+--    ]
+-- , TEXT = description ]
 -- Warning: there may be 2 links (two-parts books) with a shared description. We skip the second title
 -- TODO: Hope it will not break
-bookFromParagraph :: [Node] -> [Maybe Book]
-bookFromParagraph ((Node _ (LINK url _) [emp])
+bookFromParagraph :: [T.Text] -> [Node] -> [Maybe Book]
+bookFromParagraph category ((Node _ (LINK url _) [emp])
                    : (Node _ (TEXT descr) [])
-                   : xs) = createBook url descr emp : bookFromParagraph xs
-bookFromParagraph ((Node _ (LINK url _) [emp])
+                   : xs) = createBook emp category url descr : bookFromParagraph category xs
+bookFromParagraph category ((Node _ (LINK url _) [emp])
                    : (Node _ (TEXT _) _)
                    : (Node _ (LINK _ _) _)
                    : (Node _ (TEXT descr) [])
-                   : xs)= createBook url descr emp : bookFromParagraph xs
-bookFromParagraph _ = []
+                   : xs)= createBook emp category url descr : bookFromParagraph category xs
+bookFromParagraph _ _ = []
 
--- The document is actually a list of nodes (as lines in a text)
--- -- If we want to propagate the header to books, we have to split this list
-splitByHeading :: [Node] -> String
-splitByHeading [(Node _ (HEADING n) x), xs] = "lol"
+-- A book is actually an item. For simplicity, we only search though paragraph with the following structure :
+-- - a link (to amazon) with the book title
+-- - text (description)
+getBooksP :: [T.Text] -> Node -> [Book]
+getBooksP category (Node _ PARAGRAPH n) = catMaybes $ bookFromParagraph category n
+getBooksP category (Node _ _ n) = concatMap (getBooksP category) n
 
--- readDocument :: Node -> [Node]
--- readDocument (Node _ DOCUMENT xs) = splitByHeading xs
-getBooks :: Node -> [Book]
-getBooks (Node _ PARAGRAPH n) = catMaybes $ bookFromParagraph n
-getBooks (Node _ _ n) = concatMap getBooks n
+-- The document is a list of headings and paragraph.
+-- the catagories are extracted from the headings and passed down to the book parser
+
+-- Get category from heading
+getCategory :: [Node] -> T.Text
+getCategory [Node _ (TEXT t ) _] = t
+getCategory [Node {}] = ""
+getCategory [] = ""
+
+getBooks  :: Node -> [Book]
+getBooks  (Node _ DOCUMENT xs) = getBooksL [] xs
+getBooks  _ = []
+
+getBooksL :: [T.Text] -> [Node] -> [Book]
+getBooksL cat (Node _ (HEADING h) hs : xs) = getBooksL c xs
+  where c = getCategory hs : cat
+getBooksL cat ((Node _ _ ns) : xs) = concatMap (getBooksP cat) ns ++ getBooksL cat xs
+getBooksL _ [] = []
 
 -- helper function
 offset :: Int -> String
@@ -157,24 +179,12 @@ printNode depth (Node _ t n) = offset depth ++ show t ++ "\n"  ++ n'
   where
     n' = Prelude.concatMap (printNode (depth+1)) n
 
-skipDocument :: Node -> [Node]
-skipDocument (Node _ DOCUMENT n) = n
-skipDocument _ = []
-
-isHeading :: Int -> Node -> Bool
-isHeading level (Node _ (HEADING level') _) = level == level'
-isHeading _ _ = False
-
 
 sample = do
   f <- readFile "general.md"
   let nodes = commonmarkToNode [] $ T.pack f
-  -- return $ concatMap bookFromParagraph $ getParagraph nodes
   return $  getBooks nodes
-  -- let groups = split (keepDelimsL $ whenElt (isHeading 3)) $ skipDocument nodes
-  -- return groups
-  -- print . Prelude.head $ l
-  -- print . Prelude.head $ listNodes
+  -- return $ concatMap bookFromParagraph $ getParagraph nodes
   -- putStrLn $ printNode 0 nodes
 
 main :: IO ()
@@ -189,6 +199,6 @@ main = do
   -- print $ content_md . _data $ r
   let nodes = commonmarkToNode [] md
   -- print nodes
-  putStrLn $ printNode 0 nodes
+  -- putStrLn $ printNode 0 nodes
   -- print $ Prelude.length $ getBooks nodes
-  -- print $ getBooks nodes
+  print $ getBooks nodes
